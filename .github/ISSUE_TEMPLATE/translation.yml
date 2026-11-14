@@ -1,0 +1,34 @@
+name: Translation correction
+description: Suggest a wording improvement or report an untranslated interface phrase.
+title: "[Translation] "
+body:
+  - type: input
+    id: locale
+    attributes:
+      label: Language
+      placeholder: Català (ca)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: WanGP and plugin versions
+  - type: textarea
+    id: source
+    attributes:
+      label: Original interface phrase and location
+      description: Include the exact English UI text and the screen where it appears. Leave out personal prompts and file paths.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested translation
+      description: Preserve placeholders such as {0}, model names and command syntax.
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Why this wording is better
+      description: Context and terminology references are welcome.
