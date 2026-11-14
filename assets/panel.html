@@ -1,0 +1,53 @@
+<section id="wangp-language-panel">
+<style>
+#wangp-language-panel{max-width:1080px;margin:16px auto;padding:4px 16px;color:var(--body-text-color);font:15px/1.55 system-ui}
+#wangp-language-panel h2{font-size:25px;margin:0 0 8px}#wangp-language-panel h3{font-size:18px;margin:0 0 12px}
+#wangp-language-panel h2,#wangp-language-panel h3{white-space:normal!important;overflow-wrap:break-word}
+#wangp-language-panel input[type=checkbox]{appearance:auto!important;accent-color:#2563eb;width:16px;height:16px;vertical-align:middle;margin-right:5px}
+#wangp-language-panel details{border:1px solid var(--border-color-primary,#ccc);border-radius:12px;margin:18px 0;padding:16px}
+#wangp-language-panel summary{font-weight:600;cursor:pointer;margin-bottom:12px}
+#wangp-language-panel .wl-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:12px 0}
+#wangp-language-panel .wl-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#wangp-language-panel label{display:block;font-weight:500}#wangp-language-panel input:not([type=checkbox]),#wangp-language-panel select,#wangp-language-panel textarea{background:var(--input-background-fill,#fff);color:var(--body-text-color,#111);border:1px solid var(--border-color-primary,#aaa);border-radius:7px;padding:9px;width:100%;box-sizing:border-box;font:inherit}
+#wangp-language-panel textarea{resize:vertical;min-height:110px}#wangp-language-panel button{border:1px solid var(--border-color-primary,#999);background:var(--button-secondary-background-fill,#eee);color:var(--body-text-color,#222);border-radius:7px;padding:8px 14px;cursor:pointer;font:inherit}
+#wangp-language-panel button:disabled{opacity:.45;cursor:default}#wangp-language-panel .wl-primary{background:#2563eb;color:white;border-color:#2563eb}
+#wangp-language-panel .wl-note{font-size:13px;opacity:.8}#wangp-language-panel [role=status]{padding:10px;border-radius:8px;white-space:pre-wrap;min-height:20px}
+#wangp-language-panel .wl-source{font-family:ui-monospace,monospace}#wangp-language-panel .wl-grow{flex:1;min-width:220px}
+#wangp-language-panel pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto}
+@media(max-width:650px){#wangp-language-panel .wl-grid{grid-template-columns:1fr}}
+</style>
+<h2>Languages and community translations</h2>
+<p>Choose your language once. The translator works quietly in the background.</p>
+<details open><summary>Interface language</summary>
+ <div class="wl-row"><label><input id="wl-enabled" type="checkbox"> Enable interface translation</label></div>
+ <label for="wl-language">Preferred language</label><select id="wl-language"></select>
+ <p class="wl-note">This preference is remembered in this browser. Disable translation to restore the original English interface.</p>
+ <p class="wl-note">Your prompts, files and generation settings stay unchanged.</p>
+</details>
+<details><summary>Correct a translation</summary>
+ <p>Corrections are saved in this browser. Export them to share with other people or keep a backup.</p>
+ <label for="wl-scope">Text group</label><select id="wl-scope"><option value="interface">Interface and controls</option><option value="guide">Help and guides</option><option value="all">All texts</option></select>
+ <div class="wl-grid"><div><label for="wl-edit-language">Translation language</label><select id="wl-edit-language"></select></div><div><label for="wl-filter">Show entries</label><select id="wl-filter"><option value="all">All phrases</option><option value="missing">Missing translations</option><option value="edited">My corrections</option></select></div></div>
+ <label for="wl-search">Search source or translation</label><input id="wl-search" type="search" autocomplete="off">
+ <select id="wl-entries" size="7" aria-label="Translation entries"></select>
+ <div class="wl-row"><button id="wl-prev" type="button">Previous</button><span id="wl-count" class="wl-note" translate="no"></span><button id="wl-next" type="button">Next</button></div>
+ <div class="wl-grid"><div><label for="wl-source">Original English text</label><textarea id="wl-source" class="wl-source" readonly translate="no"></textarea></div><div><label for="wl-translation">Translation</label><textarea id="wl-translation" translate="no"></textarea></div></div>
+ <div class="wl-row"><button id="wl-save" class="wl-primary" type="button">Save correction</button><button id="wl-reset-entry" type="button">Restore bundled translation</button></div>
+ <details><summary>Add a missing phrase</summary><p class="wl-note">Copy the exact interface text. Do not include prompts, personal paths or private content.</p><label for="wl-new-source">New original phrase</label><textarea id="wl-new-source" translate="no"></textarea><label for="wl-new-translation">New translation</label><textarea id="wl-new-translation" translate="no"></textarea><button id="wl-add-phrase" type="button">Add phrase</button></details>
+</details>
+<details><summary>Add languages and share contributions</summary>
+ <div class="wl-grid"><div><label for="wl-code">Language code</label><input id="wl-code" placeholder="pt-BR" autocomplete="off"></div><div><label for="wl-name">Native language name</label><input id="wl-name" placeholder="Português (Brasil)" autocomplete="off"></div></div>
+ <button id="wl-add-language" type="button">Create language</button>
+ <p class="wl-note">Use the editor to translate the new language. Untranslated phrases remain in English.</p>
+ <div class="wl-row"><button id="wl-export-changes" type="button">Export my corrections</button><button id="wl-export-full" type="button">Export complete language pack</button><button id="wl-export-json" type="button">Export JSON for Weblate</button></div>
+ <p class="wl-note">Exports contain only translation entries. Nothing is sent automatically to GitHub, Weblate or other people.</p>
+ <label for="wl-import-file">Import language pack</label><input id="wl-import-file" type="file" accept="application/json,.json">
+ <p class="wl-note">Review the preview before importing. Your existing corrections win conflicts unless you choose to replace them.</p>
+ <pre id="wl-import-preview" translate="no"></pre>
+ <label><input id="wl-replace-conflicts" type="checkbox"> Replace my conflicting corrections</label>
+ <div class="wl-row"><button id="wl-import-apply" type="button" disabled>Apply import</button><button id="wl-undo-import" type="button">Undo last import</button></div>
+</details>
+<p class="wl-note">Additional language catalogs were assisted by a local model. Community review helps improve terminology and phrasing.</p>
+<p class="wl-note" translate="no">WanGP Languages · 0.2.0</p>
+<div id="wl-status" role="status" aria-live="polite"></div>
+</section>
