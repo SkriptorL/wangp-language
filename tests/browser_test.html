@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>WanGP language regression tests</title>
+<style>body{font:16px system-ui;padding:24px;line-height:1.6}button,input,textarea{padding:8px;margin:6px}#results{white-space:pre-wrap;background:#eee;padding:16px}</style>
+<h1>WanGP language regression tests</h1>
+<button id="run" translate="no">Run tests</button>
+<pre id="results" translate="no">Ready to run</pre>
+<div id="fixture">
+ <button id="action" title="Generate">Generate</button>
+ <button id="info-icon" title="Generate">i</button>
+ <div class="wangp-settings-file-actions is-compact"><button id="compact" class="wangp-settings-default">Set Settings as Default</button></div>
+ <div class="wangp-lora-download-row"><button id="css-download">Download</button></div>
+ <label id="label">Number of Inference Steps</label>
+ <span data-testid="block-info" id="info">Category</span>
+ <input id="input" value="Generate" placeholder="Enter Lora URL">
+ <div class="secondary-wrap"><input id="dropdown" role="listbox" aria-expanded="false" value="Generate"></div>
+ <textarea id="prompt" placeholder="Default if blank">Generate</textarea>
+ <div class="chatbot"><button id="chat">Generate</button></div>
+ <article class="chat__message"><span class="md chatbot prose" id="deepy">Generate</span></article>
+ <span class="md chatbot prose" id="help">Older media remain in the workspace and can be managed with its magnifier.</span>
+ <div class="gallery"><span id="filename" class="label">Generate</span></div>
+ <div contenteditable="true"><span id="editable" class="label">Generate</span></div>
+ <span id="unknown" class="label">Uncatalogued phrase 123</span>
+ <div id="queue_html_container"><div class="prompt-cell"><span id="queue">Generate</span></div></div>
+</div>
+<!--__PANEL__-->
+<script>/*__RUNTIME__*/</script>
+<script>
+document.querySelector('#run').onclick = async () => {
+ const out = document.querySelector('#results');
+ const result = [];
+ const $ = id => document.getElementById(id);
+ const wait = () => new Promise(resolve => setTimeout(resolve, 160));
+ const check = (ok, name) => {result.push((ok ? 'PASS ' : 'FAIL ') + name); out.textContent = result.join('\n');};
+ try {
+  window.wanGPLanguage.setEnabled(true);window.wanGPLanguage.setLanguage('es'); await wait();
+  check(!document.querySelector('#wangp-language-picker'),'No floating language selector');
+  check(!!document.querySelector('#wangp-language-panel'),'Dedicated language section');
+  check($('action').textContent === 'Generar', 'Spanish button');
+  check($('info-icon').textContent==='i','Information icon stays unchanged');
+  check(getComputedStyle($('compact'),'::after').content.includes('Guardar predeterminados')&&getComputedStyle($('css-download'),'::after').content.includes('Descargar'),'Native CSS captions translated');
+  check(document.documentElement.lang==='es','Document language follows translation');
+  check($('info').textContent === 'Categoría', 'Gradio block-info label');
+  check($('action').title === 'Generar', 'Tooltip translated');
+  check($('prompt').value === 'Generate' && $('input').value === 'Generate', 'Prompt and input values preserved');
+  check($('dropdown').value==='Generate'&&$('dropdown').parentElement.querySelector('.wl-dropdown-caption')?.textContent==='Generar','Dropdown caption translated without changing its value');
+  check($('wl-filter').value==='all','Editor filter keeps its stable value');
+  $('dropdown').focus();await wait();
+  check($('dropdown').parentElement.querySelector('.wl-dropdown-caption').hidden,'Dropdown editing uses the original input');
+  $('dropdown').blur();await wait();
+  check($('prompt').placeholder === 'Predeterminado si se deja vacío', 'Textarea placeholder');
+  check(['chat','deepy','filename','editable','queue'].every(id => $(id).textContent === 'Generate'), 'User content excluded');
+  check($('help').textContent.startsWith('Los archivos anteriores'), 'Gradio Markdown help translated');
+  check($('unknown').textContent === 'Uncatalogued phrase 123', 'English fallback');
+  let clicks = 0;
+  $('action').onclick = () => clicks++;
+  $('action').click(); check(clicks === 1, 'Button handler preserved');
+  $('action').firstChild.nodeValue = 'Save'; await wait();
+  check($('action').textContent === 'Guardar', 'Dynamic source update');
+  const clone = $('action').cloneNode(true); clone.id = 'clone'; $('fixture').append(clone);
+  const ambiguous=document.createElement('button');ambiguous.textContent='Save Settings';$('fixture').append(ambiguous);await wait();
+  const ambiguousClone=ambiguous.cloneNode(true);$('fixture').append(ambiguousClone);await wait();
+  const dynamic = document.createElement('button'); dynamic.id = 'dynamic'; dynamic.textContent = 'Cancel'; $('fixture').append(dynamic);
+  const host = document.createElement('div'); host.id='shadow'; host.attachShadow({mode:'open'}).innerHTML='<button>Generate</button>'; $('fixture').append(host);
+  const frame=document.createElement('iframe');
+  const frameLoaded=new Promise(resolve=>frame.addEventListener('load',resolve,{once:true}));
+  frame.srcdoc='<button>Generate</button><textarea>Generate</textarea>';$('fixture').append(frame);await frameLoaded;
+  await wait();
+  check(dynamic.textContent === 'Cancelar', 'New DOM nodes');
+  check(host.shadowRoot.querySelector('button').textContent === 'Generar', 'Open shadow root');
+  check(frame.contentDocument.querySelector('button').textContent==='Generar'&&frame.contentDocument.querySelector('textarea').value==='Generate','Same-origin embedded interface preserves user input');
+  $('prompt').placeholder = 'Enter Lora URL'; await wait();
+  check($('prompt').placeholder === 'Introduce la URL del LoRA', 'Dynamic textarea placeholder');
+  window.wanGPLanguage.setLanguage('en'); await wait();
+  check($('action').textContent === 'Save' && $('action').title === 'Generate', 'Restore latest original and tooltip');
+  check(clone.textContent === 'Save', 'Restore toolbar clones');
+  check(ambiguousClone.textContent==='Save Settings','Restore cloned labels with ambiguous translations');
+  check(dynamic.textContent === 'Cancel' && host.shadowRoot.querySelector('button').textContent === 'Generate', 'Restore dynamic and shadow content');
+  check(frame.contentDocument.querySelector('button').textContent==='Generate','Restore embedded interface');
+  check($('prompt').placeholder === 'Enter Lora URL', 'Restore placeholder');
+  check(JSON.parse(localStorage.getItem('wangp.language.editor.v2')).language === 'en', 'Persist language');
+  window.wanGPLanguage.setLanguage('invalid'); await wait();
+  check(window.wanGPLanguage.getLanguage() === 'en', 'Reject unknown locale');
+  for (let i=0;i<3;i++) {window.wanGPLanguage.setLanguage('es');await wait();window.wanGPLanguage.setLanguage('en');await wait();}
+  check($('action').textContent === 'Save' && $('input').value === 'Generate', 'Repeated switching without drift');
+  window.wanGPLanguage.setLanguage('es'); await wait();
+  window.wanGPLanguage.setEnabled(false);await wait();
+  check($('action').textContent==='Save','Disable restores original interface');
+  check(getComputedStyle($('compact'),'::after').content.includes('Set Default')&&document.documentElement.lang==='en','Disable restores CSS captions and document language');
+  check($('dropdown').value==='Generate'&&!$('dropdown').classList.contains('wl-dropdown-translated'),'Disable restores dropdown presentation');
+  window.wanGPLanguage.setEnabled(true);await wait();
+  check($('action').textContent==='Guardar','Re-enable remembered language');
+  const api=window.wanGPLanguage;
+  const known={es:'Generar',ca:'Genera',en:'Generate',fr:'Générer',it:'Genera',de:'Generieren',ru:'Сгенерировать','zh-Hans':'生成'};
+  for(const [code,label] of Object.entries(known)){
+   api.setLanguage(code);await wait();
+   check($('action').title===label&&$('prompt').value==='Generate','Locale '+code+' preserves user input');
+  }
+  api.setLanguage('es');await wait();
+  api.edit('es','Frames: {0}','Fotogramas: {0}');
+  const template=document.createElement('button');template.textContent='Frames: 24';$('fixture').append(template);await wait();
+  check(template.textContent==='Fotogramas: 24','Dynamic placeholders preserve values');
+  api.edit('es','Convert {0} into {1}.','Convertir a {1} desde {0}.');
+  check(api.translate('Convert A+B [test] into output.mp4.')==='Convertir a output.mp4 desde A+B [test].','Literal template matching and reordered placeholders');
+  api.resetEntry('es','Convert {0} into {1}.');
+  let rejected=false;try{api.edit('es','Frames: {0}','Fotogramas');}catch(_){rejected=true;}
+  check(rejected,'Reject broken placeholders');
+  if(!api.languages().qaa)api.addLanguage('qaa','Test language');
+  api.edit('qaa','Generate','Local test');
+  const pack={format:'wangp-language-pack',formatVersion:1,locale:'qaa',name:'Test language',translations:{Generate:'Imported test'}};
+  check(api.previewPack(pack).conflicts===1,'Import conflict preview');
+  api.importPack(pack,false);check(api.effective('qaa').Generate==='Local test','Preserve local corrections by default');
+  api.importPack(pack,true);check(api.effective('qaa').Generate==='Imported test','Explicit conflict replacement');
+  api.undoImport();check(api.effective('qaa').Generate==='Local test','Undo import');
+  api.importPack(pack,true);api.edit('qaa','Generate','Later correction');api.undoImport();
+  check(api.effective('qaa').Generate==='Later correction','Undo preserves corrections made after import');
+  api.edit('qaa','Generate','Local test');
+  check(api.exportPack('qaa').translations.Generate==='Local test','Export corrections');
+  rejected=false;try{api.importPack({...pack,locale:'../bad'},true);}catch(_){rejected=true;}
+  check(rejected,'Reject invalid language codes');
+  rejected=false;try{api.importPack({...pack,translations:{'Save settings':'a',' Save  settings ':'b'}});}catch(_){rejected=true;}
+  check(rejected,'Reject duplicate normalized phrases');
+  rejected=false;try{api.importPack({...pack,translations:JSON.parse('{"__proto__":"bad"}')});}catch(_){rejected=true;}
+  check(rejected,'Reject prototype keys');
+  api.edit('qaa','Generate','<img src=x onerror=alert(1)>');api.setLanguage('qaa');await wait();
+  dynamic.textContent='Generate';await wait();
+  check(dynamic.textContent==='<img src=x onerror=alert(1)>'&&dynamic.children.length===0,'Imported markup remains text');
+  api.setLanguage('es');api.resetEntry('es','Frames: {0}');await wait();
+  out.textContent += '\n\n' + (result.some(line=>line.startsWith('FAIL')) ? 'FAILED' : 'ALL PASSED') + ' — ' + result.length + ' checks';
+ } catch(error) {out.textContent += '\nERROR: ' + error.stack;}
+};
+</script></html>
