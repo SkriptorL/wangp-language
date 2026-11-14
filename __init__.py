@@ -1,0 +1,1 @@
+"""WanGP community language plugin."""

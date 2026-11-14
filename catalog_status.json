@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "wangp": "19.292",
+  "source_entries": 5347,
+  "status": "public release; linguistic review open",
+  "human_language_review": "pending",
+  "languages": {
+    "es": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 363
+    },
+    "ca": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 379
+    },
+    "fr": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 420
+    },
+    "it": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 424
+    },
+    "de": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 426
+    },
+    "ru": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 350
+    },
+    "zh-Hans": {
+      "populated": 5347,
+      "missing": 0,
+      "invalid_placeholders": 0,
+      "identical_to_source": 254
+    }
+  }
+}

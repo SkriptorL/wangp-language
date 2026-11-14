@@ -1,0 +1,12 @@
+WanGP Languages uses interface and documentation text originating from WanGP.
+Upstream: https://github.com/deepbeepmeep/WanGP
+Source installation used for this local build: WanGP v19.292.
+
+WanGP is a separate project. Its original notices and licensing terms continue
+to apply to its copyrightable texts and their translations. A copy of the
+license supplied with the source installation is included as LICENSE.WanGP.txt.
+The MIT license for this plugin's original code does not replace that license.
+
+Model-assisted translation was used during preparation. The plugin does not
+bundle model weights or require a model at runtime. Catalogs are community
+review drafts. No affiliation or official endorsement by WanGP is asserted.

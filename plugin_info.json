@@ -1,0 +1,9 @@
+{
+  "name": "WanGP Languages",
+  "author": "SkriptorL and contributors",
+  "version": "0.2.0",
+  "description": "Multilingual interface for WanGP with eight languages, versioned catalogs, a translation editor and Weblate-ready files.",
+  "type": ["extension", "app"],
+  "date": "2026-11-14",
+  "wan2gp_version": "19.292"
+}
