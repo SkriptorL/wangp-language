@@ -1,111 +1,992 @@
 {
-  "_languages": ["es", "ca", "fr", "it", "de", "ru", "zh-Hans"],
-  "Multilingual interface for WanGP with eight languages, versioned catalogs, a translation editor and Weblate-ready files.": ["Interfaz multilingüe para WanGP con ocho idiomas, catálogos con versiones, un editor de traducciones y archivos preparados para Weblate.", "Interfície multilingüe per a WanGP amb vuit idiomes, catàlegs amb versions, un editor de traduccions i fitxers preparats per al Weblate.", "Interface multilingue pour WanGP avec huit langues, des catalogues versionnés, un éditeur de traductions et des fichiers prêts pour Weblate.", "Interfaccia multilingue per WanGP con otto lingue, cataloghi con versioni, un editor di traduzioni e file pronti per Weblate.", "Mehrsprachige Oberfläche für WanGP mit acht Sprachen, versionierten Katalogen, einem Übersetzungseditor und Dateien für Weblate.", "Многоязычный интерфейс WanGP с восемью языками, версионируемыми каталогами, редактором переводов и файлами для Weblate.", "WanGP 多语言界面，提供八种语言、版本化语言包、翻译编辑器及可用于 Weblate 的文件。"],
-  "Dropdown": ["Desplegable", "Desplegable", "Liste déroulante", "Menu a discesa", "Auswahlliste", "Раскрывающийся список", "下拉列表"],
-  "One Phase": ["Una fase", "Una fase", "Une phase", "Una fase", "Eine Phase", "Одна фаза", "一个阶段"],
-  "Two Phases": ["Dos fases", "Dues fases", "Deux phases", "Due fasi", "Zwei Phasen", "Две фазы", "两个阶段"],
-  "Two Phases with Tiling": ["Dos fases con procesamiento por bloques", "Dues fases amb processament per blocs", "Deux phases avec traitement par tuiles", "Due fasi con elaborazione a tasselli", "Zwei Phasen mit Kachelverarbeitung", "Две фазы с обработкой по тайлам", "两个阶段，启用分块处理"],
-  "Three Phases": ["Tres fases", "Tres fases", "Trois phases", "Tre fasi", "Drei Phasen", "Три фазы", "三个阶段"],
-  "An H3 Prompt from Text": ["Un prompt H3 a partir de texto", "Una indicació H3 a partir de text", "Un prompt H3 à partir de texte", "Un prompt H3 a partire da testo", "Einen H3-Prompt aus Text", "Промпт H3 из текста", "根据文本编写 H3 提示词"],
-  "An H3 Reference Prompt from Text": ["Un prompt H3 de referencia a partir de texto", "Una indicació H3 de referència a partir de text", "Un prompt H3 de référence à partir de texte", "Un prompt H3 di riferimento a partire da testo", "Einen H3-Referenzprompt aus Text", "Референсный промпт H3 из текста", "根据文本编写 H3 参考提示词"],
-  "Enter here a Name for a Lora Preset or a Settings or Choose one": ["Escribe un nombre para un preajuste LoRA o de configuración, o elige uno", "Escriu un nom per a un preajust LoRA o de configuració, o tria'n un", "Saisissez un nom pour un préréglage LoRA ou de paramètres, ou choisissez-en un", "Inserisci un nome per un preset LoRA o di impostazioni, oppure scegline uno", "Namen für eine LoRA- oder Einstellungsvorlage eingeben oder eine Vorlage wählen", "Введите имя пресета LoRA или настроек либо выберите существующий", "输入 LoRA 预设或设置预设的名称，或选择已有预设"],
-  "Choose a Lora Preset or a Settings file in this List": ["Elige un preajuste LoRA o un archivo de ajustes de esta lista", "Tria un preajust LoRA o un fitxer de configuració d'aquesta llista", "Choisissez un préréglage LoRA ou un fichier de paramètres dans cette liste", "Scegli un preset LoRA o un file di impostazioni dall'elenco", "Eine LoRA-Vorlage oder Einstellungsdatei aus dieser Liste wählen", "Выберите пресет LoRA или файл настроек из списка", "从列表中选择 LoRA 预设或设置文件"],
-  "Attention mode": ["Modo de atención", "Mode d'atenció", "Mode d'attention", "Modalità di attenzione", "Aufmerksamkeitsmodus", "Режим внимания", "注意力模式"],
-  ", Data Type": [", tipo de datos", ", tipus de dades", ", type de données", ", tipo di dati", ", Datentyp", ", тип данных", "，数据类型"],
-  ", Quantization": [", cuantización", ", quantització", ", quantification", ", quantizzazione", ", Quantisierung", ", квантизация", "，量化"],
-  "Text group": ["Grupo de textos", "Grup de textos", "Groupe de textes", "Gruppo di testi", "Textgruppe", "Группа текстов", "文本分组"],
-  "Interface and controls": ["Interfaz y controles", "Interfície i controls", "Interface et commandes", "Interfaccia e controlli", "Oberfläche und Bedienelemente", "Интерфейс и элементы управления", "界面与控件"],
-  "Help and guides": ["Ayudas y guías", "Ajuda i guies", "Aide et guides", "Aiuto e guide", "Hilfe und Anleitungen", "Справка и руководства", "帮助与指南"],
-  "All texts": ["Todos los textos", "Tots els textos", "Tous les textes", "Tutti i testi", "Alle Texte", "Все тексты", "全部文本"],
-  "Text Only": ["Sólo texto", "Només text", "Texte uniquement", "Solo testo", "Nur Text", "Только текст", "仅文本"],
-  "Video Input Mode: {0}": ["Modo de entrada de vídeo: {0}", "Mode d'entrada de vídeo: {0}", "Mode d'entrée vidéo : {0}", "Modalità di ingresso video: {0}", "Videoeingabemodus: {0}", "Режим входных данных видео: {0}", "视频输入模式：{0}"],
-  "Unload models and extensions": ["Liberar modelos y extensiones de la memoria", "Allibera els models i les extensions de la memòria", "Décharger les modèles et les extensions de la mémoire", "Scarica modelli ed estensioni dalla memoria", "Modelle und Erweiterungen aus dem Speicher entladen", "Выгрузить модели и расширения из памяти", "从内存中卸载模型和扩展"],
-  "Unload models and extensions [Alt+U]": ["Liberar modelos y extensiones de la memoria [Alt+U]", "Allibera els models i les extensions de la memòria [Alt+U]", "Décharger les modèles et les extensions de la mémoire [Alt+U]", "Scarica modelli ed estensioni dalla memoria [Alt+U]", "Modelle und Erweiterungen aus dem Speicher entladen [Alt+U]", "Выгрузить модели и расширения из памяти [Alt+U]", "从内存中卸载模型和扩展 [Alt+U]"],
-  "Search models [Alt+S]": ["Buscar modelos [Alt+S]", "Cerca models [Alt+S]", "Rechercher des modèles [Alt+S]", "Cerca modelli [Alt+S]", "Modelle suchen [Alt+S]", "Поиск моделей [Alt+S]", "搜索模型 [Alt+S]"],
-  "Refresh model list [Alt+R]": ["Actualizar la lista de modelos [Alt+R]", "Actualitza la llista de models [Alt+R]", "Actualiser la liste des modèles [Alt+R]", "Aggiorna l'elenco dei modelli [Alt+R]", "Modellliste aktualisieren [Alt+R]", "Обновить список моделей [Alt+R]", "刷新模型列表 [Alt+R]"],
-  "This preference is remembered in this browser. Disable translation to restore the original English interface.": ["La elección se guarda en este navegador. Desactiva la traducción para recuperar la interfaz original en inglés.", "La tria es desa en aquest navegador. Desactiva la traducció per recuperar la interfície original en anglès.", "Votre choix est enregistré dans ce navigateur. Désactivez la traduction pour retrouver l'interface d'origine en anglais.", "La scelta viene salvata in questo browser. Disattiva la traduzione per tornare all'interfaccia originale in inglese.", "Deine Auswahl wird in diesem Browser gespeichert. Deaktiviere die Übersetzung, um zur englischen Originaloberfläche zurückzukehren.", "Ваш выбор сохраняется в этом браузере. Отключите перевод, чтобы вернуть исходный английский интерфейс.", "您的选择会保存在此浏览器中。禁用翻译即可恢复原始英文界面。"],
-  "Your prompts, files and generation settings stay unchanged.": ["Tus prompts, archivos y ajustes de generación se conservan sin cambios.", "Les teves indicacions, els fitxers i els ajustos de generació no es modifiquen.", "Vos prompts, fichiers et paramètres de génération restent inchangés.", "I prompt, i file e le impostazioni di generazione restano invariati.", "Deine Prompts, Dateien und Generierungseinstellungen bleiben unverändert.", "Ваши промпты, файлы и настройки генерации остаются без изменений.", "您的提示词、文件和生成设置保持不变。"],
-  "Corrections are saved in this browser. Export them to share with other people or keep a backup.": ["Las correcciones se guardan en este navegador. Expórtalas para compartirlas o conservar una copia de seguridad.", "Les correccions es desen en aquest navegador. Exporta-les per compartir-les o conservar-ne una còpia de seguretat.", "Les corrections sont enregistrées dans ce navigateur. Exportez-les pour les partager ou en conserver une sauvegarde.", "Le correzioni vengono salvate in questo browser. Esportale per condividerle o conservarne una copia di sicurezza.", "Korrekturen werden in diesem Browser gespeichert. Exportiere sie, um sie zu teilen oder eine Sicherungskopie aufzubewahren.", "Исправления сохраняются в этом браузере. Экспортируйте их, чтобы поделиться с другими или сохранить резервную копию.", "修正会保存在此浏览器中。您可以导出修正，与他人分享或保留备份。"],
-  "Copy the exact interface text. Do not include prompts, personal paths or private content.": ["Copia el texto exacto de la interfaz, sin incluir prompts, rutas personales ni contenido privado.", "Copia el text exacte de la interfície, sense incloure indicacions, rutes personals ni contingut privat.", "Copiez le texte exact de l'interface, sans inclure de prompts, de chemins personnels ni de contenu privé.", "Copia il testo esatto dell'interfaccia, senza includere prompt, percorsi personali o contenuti privati.", "Kopiere den genauen Text aus der Oberfläche, ohne Prompts, persönliche Pfade oder private Inhalte einzufügen.", "Скопируйте точный текст интерфейса. Не включайте промпты, личные пути к файлам и приватные данные.", "请复制界面的原始文本，不要包含提示词、个人文件路径或私人内容。"],
-  "Use the editor to translate the new language. Untranslated phrases remain in English.": ["Usa el editor para traducir el nuevo idioma. Las frases pendientes se muestran en inglés.", "Fes servir l'editor per traduir el nou idioma. Les frases pendents es mostren en anglès.", "Utilisez l'éditeur pour traduire la nouvelle langue. Les phrases non traduites restent en anglais.", "Usa l'editor per tradurre la nuova lingua. Le frasi non tradotte restano in inglese.", "Übersetze die neue Sprache im Editor. Nicht übersetzte Texte bleiben auf Englisch.", "Используйте редактор для перевода на новый язык. Непереведённые фразы останутся на английском.", "使用编辑器翻译新语言。未翻译的文本将保持英文。"],
-  "Exports contain only translation entries. Nothing is sent automatically to GitHub, Weblate or other people.": ["Los archivos exportados sólo contienen traducciones. No se envía nada automáticamente a GitHub, Weblate ni a otras personas.", "Els fitxers exportats només contenen traduccions. No s'envia res automàticament a GitHub, Weblate ni a altres persones.", "Les fichiers exportés ne contiennent que des traductions. Rien n'est envoyé automatiquement à GitHub, Weblate ou à d'autres personnes.", "I file esportati contengono solo traduzioni. Nulla viene inviato automaticamente a GitHub, Weblate o ad altre persone.", "Exportierte Dateien enthalten nur Übersetzungseinträge. Nichts wird automatisch an GitHub, Weblate oder andere Personen gesendet.", "Экспортируемые файлы содержат только записи переводов. Ничего не отправляется автоматически в GitHub, Weblate или другим людям.", "导出的文件仅包含翻译条目。不会自动向 GitHub、Weblate 或他人发送任何内容。"],
-  "Review the preview before importing. Your existing corrections win conflicts unless you choose to replace them.": ["Revisa la vista previa antes de importar. Si hay conflictos, se conservan tus correcciones salvo que elijas reemplazarlas.", "Revisa la previsualització abans d'importar. Si hi ha conflictes, es conserven les teves correccions tret que triïs substituir-les.", "Vérifiez l'aperçu avant d'importer. En cas de conflit, vos corrections sont conservées, sauf si vous choisissez de les remplacer.", "Controlla l'anteprima prima di importare. In caso di conflitto, le tue correzioni vengono mantenute, a meno che tu scelga di sostituirle.", "Prüfe die Vorschau vor dem Import. Bei Konflikten bleiben deine Korrekturen erhalten, sofern du sie nicht ausdrücklich ersetzen möchtest.", "Проверьте предпросмотр перед импортом. При конфликтах ваши исправления сохраняются, если вы не выберете их замену.", "导入前请检查预览。发生冲突时会保留您的现有修正，除非您选择替换。"],
-  "Replace my conflicting corrections": ["Reemplazar mis correcciones en conflicto", "Substitueix les meves correccions en conflicte", "Remplacer mes corrections en conflit", "Sostituisci le mie correzioni in conflitto", "Meine widersprüchlichen Korrekturen ersetzen", "Заменить мои конфликтующие исправления", "替换我有冲突的修正"],
-  "Additional language catalogs were assisted by a local model. Community review helps improve terminology and phrasing.": ["Los catálogos ampliados se han preparado con ayuda de un modelo local. La revisión de la comunidad ayudará a mejorar los términos y la redacción.", "Els catàlegs ampliats s'han preparat amb l'ajuda d'un model local. La revisió de la comunitat ajudarà a millorar els termes i la redacció.", "Les catalogues étendus ont été préparés avec l'aide d'un modèle local. La relecture par la communauté permettra d'améliorer la terminologie et la formulation.", "I cataloghi ampliati sono stati preparati con l'aiuto di un modello locale. La revisione della comunità aiuterà a migliorare la terminologia e la formulazione.", "Die erweiterten Kataloge wurden mithilfe eines lokalen Modells erstellt. Die Prüfung durch die Community hilft, Begriffe und Formulierungen zu verbessern.", "Расширенные каталоги подготовлены с помощью локальной модели. Проверка сообществом поможет улучшить терминологию и формулировки.", "扩充后的语言包由本地模型辅助制作。社区审阅有助于改进术语和表达。"],
-  "Translation entries": ["Entradas de traducción", "Entrades de traducció", "Entrées de traduction", "Voci di traduzione", "Übersetzungseinträge", "Записи переводов", "翻译条目"],
-  "Conflicts": ["Conflictos", "Conflictes", "Conflits", "Conflitti", "Konflikte", "Конфликты", "冲突"],
-  "Show entries": ["Mostrar entradas", "Mostra les entrades", "Afficher les entrées", "Mostra voci", "Einträge anzeigen", "Показать записи", "显示条目"],
-  "Previous": ["Anterior", "Anterior", "Précédent", "Precedente", "Zurück", "Назад", "上一页"],
-  "Next": ["Siguiente", "Següent", "Suivant", "Successivo", "Weiter", "Далее", "下一页"],
-  "New original phrase": ["Nueva frase original", "Nova frase original", "Nouvelle phrase source", "Nuova frase originale", "Neuer Originaltext", "Новая исходная фраза", "新的原文"],
-  "New translation": ["Nueva traducción", "Nova traducció", "Nouvelle traduction", "Nuova traduzione", "Neue Übersetzung", "Новый перевод", "新的译文"],
-  "Generate": ["Generar", "Genera", "Générer", "Genera", "Generieren", "Сгенерировать", "生成"],
-  "Save": ["Guardar", "Desa", "Enregistrer", "Salva", "Speichern", "Сохранить", "保存"],
-  "Cancel": ["Cancelar", "Cancel·la", "Annuler", "Annulla", "Abbrechen", "Отмена", "取消"],
-  "Apply": ["Aplicar", "Aplica", "Appliquer", "Applica", "Anwenden", "Применить", "应用"],
-  "Close": ["Cerrar", "Tanca", "Fermer", "Chiudi", "Schließen", "Закрыть", "关闭"],
-  "Delete": ["Eliminar", "Suprimeix", "Supprimer", "Elimina", "Löschen", "Удалить", "删除"],
-  "Remove": ["Quitar", "Elimina", "Retirer", "Rimuovi", "Entfernen", "Убрать", "移除"],
-  "Reset": ["Restablecer", "Restableix", "Réinitialiser", "Ripristina", "Zurücksetzen", "Сбросить", "重置"],
-  "Refresh": ["Actualizar", "Actualitza", "Actualiser", "Aggiorna", "Aktualisieren", "Обновить", "刷新"],
-  "Search": ["Buscar", "Cerca", "Rechercher", "Cerca", "Suchen", "Поиск", "搜索"],
-  "Settings": ["Ajustes", "Configuració", "Paramètres", "Impostazioni", "Einstellungen", "Настройки", "设置"],
-  "Configuration": ["Configuración", "Configuració", "Configuration", "Configurazione", "Konfiguration", "Конфигурация", "配置"],
-  "Save settings": ["Guardar ajustes", "Desa la configuració", "Enregistrer les paramètres", "Salva impostazioni", "Einstellungen speichern", "Сохранить настройки", "保存设置"],
-  "Save Settings": ["Guardar ajustes", "Desa la configuració", "Enregistrer les paramètres", "Salva impostazioni", "Einstellungen speichern", "Сохранить настройки", "保存设置"],
-  "Languages": ["Idiomas", "Idiomes", "Langues", "Lingue", "Sprachen", "Языки", "语言"],
-  "Language": ["Idioma", "Idioma", "Langue", "Lingua", "Sprache", "Язык", "语言"],
-  "Seed": ["Semilla", "Llavor", "Graine", "Seme", "Seed", "Зерно", "随机种子"],
-  "Random seed": ["Semilla aleatoria", "Llavor aleatòria", "Graine aléatoire", "Seme casuale", "Zufälliger Seed", "Случайное зерно", "随机种子"],
-  "Prompt": ["Prompt", "Indicació", "Prompt", "Prompt", "Prompt", "Промпт", "提示词"],
-  "Negative Prompt": ["Prompt negativo", "Indicació negativa", "Prompt négatif", "Prompt negativo", "Negativer Prompt", "Негативный промпт", "负面提示词"],
-  "Number of Inference Steps": ["Número de pasos de inferencia", "Nombre de passos d'inferència", "Nombre d'étapes d'inférence", "Numero di passi di inferenza", "Anzahl der Inferenzschritte", "Количество шагов инференса", "推理步数"],
-  "Category": ["Categoría", "Categoria", "Catégorie", "Categoria", "Kategorie", "Категория", "类别"],
-  "Model": ["Modelo", "Model", "Modèle", "Modello", "Modell", "Модель", "模型"],
-  "Models": ["Modelos", "Models", "Modèles", "Modelli", "Modelle", "Модели", "模型"],
-  "Download": ["Descargar", "Descarrega", "Télécharger", "Scarica", "Herunterladen", "Скачать", "下载"],
-  "Downloads": ["Descargas", "Descàrregues", "Téléchargements", "Download", "Downloads", "Загрузки", "下载"],
-  "Install": ["Instalar", "Instal·la", "Installer", "Installa", "Installieren", "Установить", "安装"],
-  "Update": ["Actualizar", "Actualitza", "Mettre à jour", "Aggiorna", "Aktualisieren", "Обновить", "更新"],
-  "Enabled": ["Activado", "Activat", "Activé", "Attivato", "Aktiviert", "Включено", "已启用"],
-  "Disabled": ["Desactivado", "Desactivat", "Désactivé", "Disattivato", "Deaktiviert", "Отключено", "已禁用"],
-  "ON": ["ACTIVADO", "ACTIVAT", "ACTIVÉ", "ATTIVO", "EIN", "ВКЛ.", "开"],
-  "OFF": ["DESACTIVADO", "DESACTIVAT", "DÉSACTIVÉ", "DISATTIVO", "AUS", "ВЫКЛ.", "关"],
-  "All": ["Todos", "Tots", "Tous", "Tutti", "Alle", "Все", "全部"],
-  "None": ["Ninguno", "Cap", "Aucun", "Nessuno", "Keine", "Нет", "无"],
-  "Default": ["Predeterminado", "Predeterminat", "Par défaut", "Predefinito", "Standard", "По умолчанию", "默认"],
-  "Import": ["Importar", "Importa", "Importer", "Importa", "Importieren", "Импортировать", "导入"],
-  "Export": ["Exportar", "Exporta", "Exporter", "Esporta", "Exportieren", "Экспортировать", "导出"],
-  "Languages and community translations": ["Idiomas y traducciones de la comunidad", "Idiomes i traduccions de la comunitat", "Langues et traductions communautaires", "Lingue e traduzioni della comunità", "Sprachen und Übersetzungen der Community", "Языки и переводы сообщества", "语言与社区翻译"],
-  "Choose your language once. The translator works quietly in the background.": ["Elige tu idioma una vez. La traducción se aplica sin interrumpir tu trabajo.", "Tria l'idioma una vegada. La traducció s'aplica sense interrompre la feina.", "Choisissez votre langue une fois. La traduction s'applique sans interrompre votre travail.", "Scegli la lingua una volta. La traduzione si applica senza interrompere il lavoro.", "Wähle deine Sprache einmal aus. Die Übersetzung wird angewendet, ohne deine Arbeit zu unterbrechen.", "Выберите язык один раз. Перевод применяется, не прерывая вашу работу.", "只需选择一次语言，界面翻译即可自动生效，不打扰您的工作。"],
-  "Interface language": ["Idioma de la interfaz", "Idioma de la interfície", "Langue de l'interface", "Lingua dell'interfaccia", "Sprache der Oberfläche", "Язык интерфейса", "界面语言"],
-  "Enable interface translation": ["Activar la traducción de la interfaz", "Activa la traducció de la interfície", "Activer la traduction de l'interface", "Attiva la traduzione dell'interfaccia", "Übersetzung der Oberfläche aktivieren", "Включить перевод интерфейса", "启用界面翻译"],
-  "Preferred language": ["Idioma preferido", "Idioma preferit", "Langue préférée", "Lingua preferita", "Bevorzugte Sprache", "Предпочитаемый язык", "首选语言"],
-  "Correct a translation": ["Corregir una traducción", "Corregeix una traducció", "Corriger une traduction", "Correggi una traduzione", "Übersetzung korrigieren", "Исправить перевод", "修正翻译"],
-  "Translation language": ["Idioma que quieres corregir", "Idioma que vols corregir", "Langue à corriger", "Lingua da correggere", "Zu bearbeitende Sprache", "Язык для редактирования", "要编辑的语言"],
-  "Search source or translation": ["Buscar en el original o la traducción", "Cerca a l'original o a la traducció", "Rechercher dans le texte source ou la traduction", "Cerca nell'originale o nella traduzione", "Original oder Übersetzung durchsuchen", "Поиск по оригиналу или переводу", "搜索原文或译文"],
-  "All phrases": ["Todas las frases", "Totes les frases", "Toutes les phrases", "Tutte le frasi", "Alle Texte", "Все фразы", "全部文本"],
-  "Missing translations": ["Traducciones pendientes", "Traduccions pendents", "Traductions manquantes", "Traduzioni mancanti", "Fehlende Übersetzungen", "Отсутствующие переводы", "未翻译文本"],
-  "My corrections": ["Mis correcciones", "Les meves correccions", "Mes corrections", "Le mie correzioni", "Meine Korrekturen", "Мои исправления", "我的修正"],
-  "Original English text": ["Texto original en inglés", "Text original en anglès", "Texte original en anglais", "Testo originale in inglese", "Englischer Originaltext", "Оригинальный текст на английском", "英文原文"],
-  "Translation": ["Traducción", "Traducció", "Traduction", "Traduzione", "Übersetzung", "Перевод", "译文"],
-  "Save correction": ["Guardar corrección", "Desa la correcció", "Enregistrer la correction", "Salva correzione", "Korrektur speichern", "Сохранить исправление", "保存修正"],
-  "Restore bundled translation": ["Restaurar la traducción del plugin", "Restaura la traducció del connector", "Restaurer la traduction du plugin", "Ripristina la traduzione del plugin", "Mitgelieferte Übersetzung wiederherstellen", "Восстановить перевод из плагина", "恢复插件自带的翻译"],
-  "Add a missing phrase": ["Añadir una frase que falta", "Afegeix una frase que falta", "Ajouter une phrase manquante", "Aggiungi una frase mancante", "Fehlenden Text hinzufügen", "Добавить отсутствующую фразу", "添加缺失文本"],
-  "Add phrase": ["Añadir frase", "Afegeix la frase", "Ajouter la phrase", "Aggiungi frase", "Text hinzufügen", "Добавить фразу", "添加文本"],
-  "Add languages and share contributions": ["Añadir idiomas y compartir aportaciones", "Afegeix idiomes i comparteix aportacions", "Ajouter des langues et partager les contributions", "Aggiungi lingue e condividi i contributi", "Sprachen hinzufügen und Beiträge teilen", "Добавление языков и обмен переводами", "添加语言与分享翻译"],
-  "Language code": ["Código de idioma", "Codi d'idioma", "Code de langue", "Codice lingua", "Sprachcode", "Код языка", "语言代码"],
-  "Native language name": ["Nombre del idioma en su propia lengua", "Nom de l'idioma en la seva llengua", "Nom de la langue dans cette langue", "Nome della lingua nella lingua stessa", "Name der Sprache in der jeweiligen Sprache", "Название языка на этом языке", "语言的本地名称"],
-  "Create language": ["Crear idioma", "Crea l'idioma", "Créer la langue", "Crea lingua", "Sprache anlegen", "Добавить язык", "创建语言"],
-  "Export my corrections": ["Exportar mis correcciones", "Exporta les meves correccions", "Exporter mes corrections", "Esporta le mie correzioni", "Meine Korrekturen exportieren", "Экспортировать мои исправления", "导出我的修正"],
-  "Export complete language pack": ["Exportar el paquete completo del idioma", "Exporta el paquet complet de l'idioma", "Exporter le pack de langue complet", "Esporta il pacchetto lingua completo", "Vollständiges Sprachpaket exportieren", "Экспортировать полный языковой пакет", "导出完整语言包"],
-  "Export JSON for Weblate": ["Exportar JSON para Weblate", "Exporta JSON per al Weblate", "Exporter le JSON pour Weblate", "Esporta JSON per Weblate", "JSON für Weblate exportieren", "Экспортировать JSON для Weblate", "导出用于 Weblate 的 JSON"],
-  "Import language pack": ["Importar un paquete de idioma", "Importa un paquet d'idioma", "Importer un pack de langue", "Importa un pacchetto lingua", "Sprachpaket importieren", "Импортировать языковой пакет", "导入语言包"],
-  "Apply import": ["Aplicar importación", "Aplica la importació", "Appliquer l'importation", "Applica importazione", "Import anwenden", "Применить импорт", "应用导入"],
-  "Undo last import": ["Deshacer la última importación", "Desfés l'última importació", "Annuler la dernière importation", "Annulla l'ultima importazione", "Letzten Import rückgängig machen", "Отменить последний импорт", "撤销上次导入"],
-  "Correction saved in this browser.": ["Corrección guardada en este navegador.", "Correcció desada en aquest navegador.", "Correction enregistrée dans ce navigateur.", "Correzione salvata in questo browser.", "Korrektur in diesem Browser gespeichert.", "Исправление сохранено в этом браузере.", "修正已保存在此浏览器中。"],
-  "Bundled translation restored.": ["Se ha restaurado la traducción del plugin.", "S'ha restaurat la traducció del connector.", "La traduction du plugin a été restaurée.", "La traduzione del plugin è stata ripristinata.", "Die mitgelieferte Übersetzung wurde wiederhergestellt.", "Перевод из плагина восстановлен.", "已恢复插件自带的翻译。"],
-  "Phrase added to your corrections.": ["Frase añadida a tus correcciones.", "Frase afegida a les teves correccions.", "Phrase ajoutée à vos corrections.", "Frase aggiunta alle tue correzioni.", "Text zu deinen Korrekturen hinzugefügt.", "Фраза добавлена в ваши исправления.", "文本已添加到您的修正中。"],
-  "Last import undone.": ["Se ha deshecho la última importación.", "S'ha desfet l'última importació.", "La dernière importation a été annulée.", "L'ultima importazione è stata annullata.", "Der letzte Import wurde rückgängig gemacht.", "Последний импорт отменён.", "已撤销上次导入。"],
-  "Draft for local review. Nothing will be published without approval.": ["Versión local para revisión. No se publicará nada sin tu aprobación.", "Versió local per revisar. No es publicarà res sense la teva aprovació.", "Version locale à vérifier. Rien ne sera publié sans votre accord.", "Versione locale da revisionare. Nulla sarà pubblicato senza la tua approvazione.", "Lokale Version zur Prüfung. Ohne deine Zustimmung wird nichts veröffentlicht.", "Локальная версия для проверки. Ничего не будет опубликовано без вашего согласия.", "这是供本地审阅的版本。未经您的批准，不会发布任何内容。"]
+  "_languages": [
+    "es",
+    "ca",
+    "fr",
+    "it",
+    "de",
+    "ru",
+    "zh-Hans"
+  ],
+  "Multilingual interface for WanGP with eight languages, versioned catalogs, a translation editor and Weblate-ready files.": [
+    "Interfaz multilingüe para WanGP con ocho idiomas, catálogos con versiones, un editor de traducciones y archivos preparados para Weblate.",
+    "Interfície multilingüe per a WanGP amb vuit idiomes, catàlegs amb versions, un editor de traduccions i fitxers preparats per al Weblate.",
+    "Interface multilingue pour WanGP avec huit langues, des catalogues versionnés, un éditeur de traductions et des fichiers prêts pour Weblate.",
+    "Interfaccia multilingue per WanGP con otto lingue, cataloghi con versioni, un editor di traduzioni e file pronti per Weblate.",
+    "Mehrsprachige Oberfläche für WanGP mit acht Sprachen, versionierten Katalogen, einem Übersetzungseditor und Dateien für Weblate.",
+    "Многоязычный интерфейс WanGP с восемью языками, версионируемыми каталогами, редактором переводов и файлами для Weblate.",
+    "WanGP 多语言界面，提供八种语言、版本化语言包、翻译编辑器及可用于 Weblate 的文件。"
+  ],
+  "Dropdown": [
+    "Desplegable",
+    "Desplegable",
+    "Liste déroulante",
+    "Menu a discesa",
+    "Auswahlliste",
+    "Раскрывающийся список",
+    "下拉列表"
+  ],
+  "One Phase": [
+    "Una fase",
+    "Una fase",
+    "Une phase",
+    "Una fase",
+    "Eine Phase",
+    "Одна фаза",
+    "一个阶段"
+  ],
+  "Two Phases": [
+    "Dos fases",
+    "Dues fases",
+    "Deux phases",
+    "Due fasi",
+    "Zwei Phasen",
+    "Две фазы",
+    "两个阶段"
+  ],
+  "Two Phases with Tiling": [
+    "Dos fases con procesamiento por bloques",
+    "Dues fases amb processament per blocs",
+    "Deux phases avec traitement par tuiles",
+    "Due fasi con elaborazione a tasselli",
+    "Zwei Phasen mit Kachelverarbeitung",
+    "Две фазы с обработкой по тайлам",
+    "两个阶段，启用分块处理"
+  ],
+  "Three Phases": [
+    "Tres fases",
+    "Tres fases",
+    "Trois phases",
+    "Tre fasi",
+    "Drei Phasen",
+    "Три фазы",
+    "三个阶段"
+  ],
+  "An H3 Prompt from Text": [
+    "Un prompt H3 a partir de texto",
+    "Una indicació H3 a partir de text",
+    "Un prompt H3 à partir de texte",
+    "Un prompt H3 a partire da testo",
+    "Einen H3-Prompt aus Text",
+    "Промпт H3 из текста",
+    "根据文本编写 H3 提示词"
+  ],
+  "An H3 Reference Prompt from Text": [
+    "Un prompt H3 de referencia a partir de texto",
+    "Una indicació H3 de referència a partir de text",
+    "Un prompt H3 de référence à partir de texte",
+    "Un prompt H3 di riferimento a partire da testo",
+    "Einen H3-Referenzprompt aus Text",
+    "Референсный промпт H3 из текста",
+    "根据文本编写 H3 参考提示词"
+  ],
+  "Enter here a Name for a Lora Preset or a Settings or Choose one": [
+    "Escribe un nombre para un preajuste LoRA o de configuración, o elige uno",
+    "Escriu un nom per a un preajust LoRA o de configuració, o tria'n un",
+    "Saisissez un nom pour un préréglage LoRA ou de paramètres, ou choisissez-en un",
+    "Inserisci un nome per un preset LoRA o di impostazioni, oppure scegline uno",
+    "Namen für eine LoRA- oder Einstellungsvorlage eingeben oder eine Vorlage wählen",
+    "Введите имя пресета LoRA или настроек либо выберите существующий",
+    "输入 LoRA 预设或设置预设的名称，或选择已有预设"
+  ],
+  "Choose a Lora Preset or a Settings file in this List": [
+    "Elige un preajuste LoRA o un archivo de ajustes de esta lista",
+    "Tria un preajust LoRA o un fitxer de configuració d'aquesta llista",
+    "Choisissez un préréglage LoRA ou un fichier de paramètres dans cette liste",
+    "Scegli un preset LoRA o un file di impostazioni dall'elenco",
+    "Eine LoRA-Vorlage oder Einstellungsdatei aus dieser Liste wählen",
+    "Выберите пресет LoRA или файл настроек из списка",
+    "从列表中选择 LoRA 预设或设置文件"
+  ],
+  "Attention mode": [
+    "Modo de atención",
+    "Mode d'atenció",
+    "Mode d'attention",
+    "Modalità di attenzione",
+    "Aufmerksamkeitsmodus",
+    "Режим внимания",
+    "注意力模式"
+  ],
+  ", Data Type": [
+    ", tipo de datos",
+    ", tipus de dades",
+    ", type de données",
+    ", tipo di dati",
+    ", Datentyp",
+    ", тип данных",
+    "，数据类型"
+  ],
+  ", Quantization": [
+    ", cuantización",
+    ", quantització",
+    ", quantification",
+    ", quantizzazione",
+    ", Quantisierung",
+    ", квантизация",
+    "，量化"
+  ],
+  "Text group": [
+    "Grupo de textos",
+    "Grup de textos",
+    "Groupe de textes",
+    "Gruppo di testi",
+    "Textgruppe",
+    "Группа текстов",
+    "文本分组"
+  ],
+  "Interface and controls": [
+    "Interfaz y controles",
+    "Interfície i controls",
+    "Interface et commandes",
+    "Interfaccia e controlli",
+    "Oberfläche und Bedienelemente",
+    "Интерфейс и элементы управления",
+    "界面与控件"
+  ],
+  "Help and guides": [
+    "Ayudas y guías",
+    "Ajuda i guies",
+    "Aide et guides",
+    "Aiuto e guide",
+    "Hilfe und Anleitungen",
+    "Справка и руководства",
+    "帮助与指南"
+  ],
+  "All texts": [
+    "Todos los textos",
+    "Tots els textos",
+    "Tous les textes",
+    "Tutti i testi",
+    "Alle Texte",
+    "Все тексты",
+    "全部文本"
+  ],
+  "Text Only": [
+    "Sólo texto",
+    "Només text",
+    "Texte uniquement",
+    "Solo testo",
+    "Nur Text",
+    "Только текст",
+    "仅文本"
+  ],
+  "Video Input Mode: {0}": [
+    "Modo de entrada de vídeo: {0}",
+    "Mode d'entrada de vídeo: {0}",
+    "Mode d'entrée vidéo : {0}",
+    "Modalità di ingresso video: {0}",
+    "Videoeingabemodus: {0}",
+    "Режим входных данных видео: {0}",
+    "视频输入模式：{0}"
+  ],
+  "Unload models and extensions": [
+    "Liberar modelos y extensiones de la memoria",
+    "Allibera els models i les extensions de la memòria",
+    "Décharger les modèles et les extensions de la mémoire",
+    "Scarica modelli ed estensioni dalla memoria",
+    "Modelle und Erweiterungen aus dem Speicher entladen",
+    "Выгрузить модели и расширения из памяти",
+    "从内存中卸载模型和扩展"
+  ],
+  "Unload models and extensions [Alt+U]": [
+    "Liberar modelos y extensiones de la memoria [Alt+U]",
+    "Allibera els models i les extensions de la memòria [Alt+U]",
+    "Décharger les modèles et les extensions de la mémoire [Alt+U]",
+    "Scarica modelli ed estensioni dalla memoria [Alt+U]",
+    "Modelle und Erweiterungen aus dem Speicher entladen [Alt+U]",
+    "Выгрузить модели и расширения из памяти [Alt+U]",
+    "从内存中卸载模型和扩展 [Alt+U]"
+  ],
+  "Search models [Alt+S]": [
+    "Buscar modelos [Alt+S]",
+    "Cerca models [Alt+S]",
+    "Rechercher des modèles [Alt+S]",
+    "Cerca modelli [Alt+S]",
+    "Modelle suchen [Alt+S]",
+    "Поиск моделей [Alt+S]",
+    "搜索模型 [Alt+S]"
+  ],
+  "Refresh model list [Alt+R]": [
+    "Actualizar la lista de modelos [Alt+R]",
+    "Actualitza la llista de models [Alt+R]",
+    "Actualiser la liste des modèles [Alt+R]",
+    "Aggiorna l'elenco dei modelli [Alt+R]",
+    "Modellliste aktualisieren [Alt+R]",
+    "Обновить список моделей [Alt+R]",
+    "刷新模型列表 [Alt+R]"
+  ],
+  "This preference is remembered in this browser. Disable translation to restore the original English interface.": [
+    "La elección se guarda en este navegador. Desactiva la traducción para recuperar la interfaz original en inglés.",
+    "La tria es desa en aquest navegador. Desactiva la traducció per recuperar la interfície original en anglès.",
+    "Votre choix est enregistré dans ce navigateur. Désactivez la traduction pour retrouver l'interface d'origine en anglais.",
+    "La scelta viene salvata in questo browser. Disattiva la traduzione per tornare all'interfaccia originale in inglese.",
+    "Deine Auswahl wird in diesem Browser gespeichert. Deaktiviere die Übersetzung, um zur englischen Originaloberfläche zurückzukehren.",
+    "Ваш выбор сохраняется в этом браузере. Отключите перевод, чтобы вернуть исходный английский интерфейс.",
+    "您的选择会保存在此浏览器中。禁用翻译即可恢复原始英文界面。"
+  ],
+  "Your prompts, files and generation settings stay unchanged.": [
+    "Tus prompts, archivos y ajustes de generación se conservan sin cambios.",
+    "Les teves indicacions, els fitxers i els ajustos de generació no es modifiquen.",
+    "Vos prompts, fichiers et paramètres de génération restent inchangés.",
+    "I prompt, i file e le impostazioni di generazione restano invariati.",
+    "Deine Prompts, Dateien und Generierungseinstellungen bleiben unverändert.",
+    "Ваши промпты, файлы и настройки генерации остаются без изменений.",
+    "您的提示词、文件和生成设置保持不变。"
+  ],
+  "Corrections are saved in this browser. Export them to share with other people or keep a backup.": [
+    "Las correcciones se guardan en este navegador. Expórtalas para compartirlas o conservar una copia de seguridad.",
+    "Les correccions es desen en aquest navegador. Exporta-les per compartir-les o conservar-ne una còpia de seguretat.",
+    "Les corrections sont enregistrées dans ce navigateur. Exportez-les pour les partager ou en conserver une sauvegarde.",
+    "Le correzioni vengono salvate in questo browser. Esportale per condividerle o conservarne una copia di sicurezza.",
+    "Korrekturen werden in diesem Browser gespeichert. Exportiere sie, um sie zu teilen oder eine Sicherungskopie aufzubewahren.",
+    "Исправления сохраняются в этом браузере. Экспортируйте их, чтобы поделиться с другими или сохранить резервную копию.",
+    "修正会保存在此浏览器中。您可以导出修正，与他人分享或保留备份。"
+  ],
+  "Copy the exact interface text. Do not include prompts, personal paths or private content.": [
+    "Copia el texto exacto de la interfaz, sin incluir prompts, rutas personales ni contenido privado.",
+    "Copia el text exacte de la interfície, sense incloure indicacions, rutes personals ni contingut privat.",
+    "Copiez le texte exact de l'interface, sans inclure de prompts, de chemins personnels ni de contenu privé.",
+    "Copia il testo esatto dell'interfaccia, senza includere prompt, percorsi personali o contenuti privati.",
+    "Kopiere den genauen Text aus der Oberfläche, ohne Prompts, persönliche Pfade oder private Inhalte einzufügen.",
+    "Скопируйте точный текст интерфейса. Не включайте промпты, личные пути к файлам и приватные данные.",
+    "请复制界面的原始文本，不要包含提示词、个人文件路径或私人内容。"
+  ],
+  "Use the editor to translate the new language. Untranslated phrases remain in English.": [
+    "Usa el editor para traducir el nuevo idioma. Las frases pendientes se muestran en inglés.",
+    "Fes servir l'editor per traduir el nou idioma. Les frases pendents es mostren en anglès.",
+    "Utilisez l'éditeur pour traduire la nouvelle langue. Les phrases non traduites restent en anglais.",
+    "Usa l'editor per tradurre la nuova lingua. Le frasi non tradotte restano in inglese.",
+    "Übersetze die neue Sprache im Editor. Nicht übersetzte Texte bleiben auf Englisch.",
+    "Используйте редактор для перевода на новый язык. Непереведённые фразы останутся на английском.",
+    "使用编辑器翻译新语言。未翻译的文本将保持英文。"
+  ],
+  "Exports contain only translation entries. Nothing is sent automatically to GitHub, Weblate or other people.": [
+    "Los archivos exportados sólo contienen traducciones. No se envía nada automáticamente a GitHub, Weblate ni a otras personas.",
+    "Els fitxers exportats només contenen traduccions. No s'envia res automàticament a GitHub, Weblate ni a altres persones.",
+    "Les fichiers exportés ne contiennent que des traductions. Rien n'est envoyé automatiquement à GitHub, Weblate ou à d'autres personnes.",
+    "I file esportati contengono solo traduzioni. Nulla viene inviato automaticamente a GitHub, Weblate o ad altre persone.",
+    "Exportierte Dateien enthalten nur Übersetzungseinträge. Nichts wird automatisch an GitHub, Weblate oder andere Personen gesendet.",
+    "Экспортируемые файлы содержат только записи переводов. Ничего не отправляется автоматически в GitHub, Weblate или другим людям.",
+    "导出的文件仅包含翻译条目。不会自动向 GitHub、Weblate 或他人发送任何内容。"
+  ],
+  "Review the preview before importing. Your existing corrections win conflicts unless you choose to replace them.": [
+    "Revisa la vista previa antes de importar. Si hay conflictos, se conservan tus correcciones salvo que elijas reemplazarlas.",
+    "Revisa la previsualització abans d'importar. Si hi ha conflictes, es conserven les teves correccions tret que triïs substituir-les.",
+    "Vérifiez l'aperçu avant d'importer. En cas de conflit, vos corrections sont conservées, sauf si vous choisissez de les remplacer.",
+    "Controlla l'anteprima prima di importare. In caso di conflitto, le tue correzioni vengono mantenute, a meno che tu scelga di sostituirle.",
+    "Prüfe die Vorschau vor dem Import. Bei Konflikten bleiben deine Korrekturen erhalten, sofern du sie nicht ausdrücklich ersetzen möchtest.",
+    "Проверьте предпросмотр перед импортом. При конфликтах ваши исправления сохраняются, если вы не выберете их замену.",
+    "导入前请检查预览。发生冲突时会保留您的现有修正，除非您选择替换。"
+  ],
+  "Replace my conflicting corrections": [
+    "Reemplazar mis correcciones en conflicto",
+    "Substitueix les meves correccions en conflicte",
+    "Remplacer mes corrections en conflit",
+    "Sostituisci le mie correzioni in conflitto",
+    "Meine widersprüchlichen Korrekturen ersetzen",
+    "Заменить мои конфликтующие исправления",
+    "替换我有冲突的修正"
+  ],
+  "Additional language catalogs were assisted by a local model. Community review helps improve terminology and phrasing.": [
+    "Los catálogos ampliados se han preparado con ayuda de un modelo local. La revisión de la comunidad ayudará a mejorar los términos y la redacción.",
+    "Els catàlegs ampliats s'han preparat amb l'ajuda d'un model local. La revisió de la comunitat ajudarà a millorar els termes i la redacció.",
+    "Les catalogues étendus ont été préparés avec l'aide d'un modèle local. La relecture par la communauté permettra d'améliorer la terminologie et la formulation.",
+    "I cataloghi ampliati sono stati preparati con l'aiuto di un modello locale. La revisione della comunità aiuterà a migliorare la terminologia e la formulazione.",
+    "Die erweiterten Kataloge wurden mithilfe eines lokalen Modells erstellt. Die Prüfung durch die Community hilft, Begriffe und Formulierungen zu verbessern.",
+    "Расширенные каталоги подготовлены с помощью локальной модели. Проверка сообществом поможет улучшить терминологию и формулировки.",
+    "扩充后的语言包由本地模型辅助制作。社区审阅有助于改进术语和表达。"
+  ],
+  "Translation entries": [
+    "Entradas de traducción",
+    "Entrades de traducció",
+    "Entrées de traduction",
+    "Voci di traduzione",
+    "Übersetzungseinträge",
+    "Записи переводов",
+    "翻译条目"
+  ],
+  "Conflicts": [
+    "Conflictos",
+    "Conflictes",
+    "Conflits",
+    "Conflitti",
+    "Konflikte",
+    "Конфликты",
+    "冲突"
+  ],
+  "Show entries": [
+    "Mostrar entradas",
+    "Mostra les entrades",
+    "Afficher les entrées",
+    "Mostra voci",
+    "Einträge anzeigen",
+    "Показать записи",
+    "显示条目"
+  ],
+  "Previous": [
+    "Anterior",
+    "Anterior",
+    "Précédent",
+    "Precedente",
+    "Zurück",
+    "Назад",
+    "上一页"
+  ],
+  "Next": [
+    "Siguiente",
+    "Següent",
+    "Suivant",
+    "Successivo",
+    "Weiter",
+    "Далее",
+    "下一页"
+  ],
+  "New original phrase": [
+    "Nueva frase original",
+    "Nova frase original",
+    "Nouvelle phrase source",
+    "Nuova frase originale",
+    "Neuer Originaltext",
+    "Новая исходная фраза",
+    "新的原文"
+  ],
+  "New translation": [
+    "Nueva traducción",
+    "Nova traducció",
+    "Nouvelle traduction",
+    "Nuova traduzione",
+    "Neue Übersetzung",
+    "Новый перевод",
+    "新的译文"
+  ],
+  "Generate": [
+    "Generar",
+    "Genera",
+    "Générer",
+    "Genera",
+    "Generieren",
+    "Сгенерировать",
+    "生成"
+  ],
+  "Save": [
+    "Guardar",
+    "Desa",
+    "Enregistrer",
+    "Salva",
+    "Speichern",
+    "Сохранить",
+    "保存"
+  ],
+  "Cancel": [
+    "Cancelar",
+    "Cancel·la",
+    "Annuler",
+    "Annulla",
+    "Abbrechen",
+    "Отмена",
+    "取消"
+  ],
+  "Apply": [
+    "Aplicar",
+    "Aplica",
+    "Appliquer",
+    "Applica",
+    "Anwenden",
+    "Применить",
+    "应用"
+  ],
+  "Close": [
+    "Cerrar",
+    "Tanca",
+    "Fermer",
+    "Chiudi",
+    "Schließen",
+    "Закрыть",
+    "关闭"
+  ],
+  "Delete": [
+    "Eliminar",
+    "Suprimeix",
+    "Supprimer",
+    "Elimina",
+    "Löschen",
+    "Удалить",
+    "删除"
+  ],
+  "Remove": [
+    "Quitar",
+    "Elimina",
+    "Retirer",
+    "Rimuovi",
+    "Entfernen",
+    "Убрать",
+    "移除"
+  ],
+  "Reset": [
+    "Restablecer",
+    "Restableix",
+    "Réinitialiser",
+    "Ripristina",
+    "Zurücksetzen",
+    "Сбросить",
+    "重置"
+  ],
+  "Refresh": [
+    "Actualizar",
+    "Actualitza",
+    "Actualiser",
+    "Aggiorna",
+    "Aktualisieren",
+    "Обновить",
+    "刷新"
+  ],
+  "Search": [
+    "Buscar",
+    "Cerca",
+    "Rechercher",
+    "Cerca",
+    "Suchen",
+    "Поиск",
+    "搜索"
+  ],
+  "Settings": [
+    "Ajustes",
+    "Configuració",
+    "Paramètres",
+    "Impostazioni",
+    "Einstellungen",
+    "Настройки",
+    "设置"
+  ],
+  "Configuration": [
+    "Configuración",
+    "Configuració",
+    "Configuration",
+    "Configurazione",
+    "Konfiguration",
+    "Конфигурация",
+    "配置"
+  ],
+  "Save settings": [
+    "Guardar ajustes",
+    "Desa la configuració",
+    "Enregistrer les paramètres",
+    "Salva impostazioni",
+    "Einstellungen speichern",
+    "Сохранить настройки",
+    "保存设置"
+  ],
+  "Save Settings": [
+    "Guardar ajustes",
+    "Desa la configuració",
+    "Enregistrer les paramètres",
+    "Salva impostazioni",
+    "Einstellungen speichern",
+    "Сохранить настройки",
+    "保存设置"
+  ],
+  "Languages": [
+    "Idiomas",
+    "Idiomes",
+    "Langues",
+    "Lingue",
+    "Sprachen",
+    "Языки",
+    "语言"
+  ],
+  "Language": [
+    "Idioma",
+    "Idioma",
+    "Langue",
+    "Lingua",
+    "Sprache",
+    "Язык",
+    "语言"
+  ],
+  "Seed": [
+    "Semilla",
+    "Llavor",
+    "Graine",
+    "Seme",
+    "Seed",
+    "Зерно",
+    "随机种子"
+  ],
+  "Random seed": [
+    "Semilla aleatoria",
+    "Llavor aleatòria",
+    "Graine aléatoire",
+    "Seme casuale",
+    "Zufälliger Seed",
+    "Случайное зерно",
+    "随机种子"
+  ],
+  "Prompt": [
+    "Prompt",
+    "Indicació",
+    "Prompt",
+    "Prompt",
+    "Prompt",
+    "Промпт",
+    "提示词"
+  ],
+  "Negative Prompt": [
+    "Prompt negativo",
+    "Indicació negativa",
+    "Prompt négatif",
+    "Prompt negativo",
+    "Negativer Prompt",
+    "Негативный промпт",
+    "负面提示词"
+  ],
+  "Number of Inference Steps": [
+    "Número de pasos de inferencia",
+    "Nombre de passos d'inferència",
+    "Nombre d'étapes d'inférence",
+    "Numero di passi di inferenza",
+    "Anzahl der Inferenzschritte",
+    "Количество шагов инференса",
+    "推理步数"
+  ],
+  "Category": [
+    "Categoría",
+    "Categoria",
+    "Catégorie",
+    "Categoria",
+    "Kategorie",
+    "Категория",
+    "类别"
+  ],
+  "Model": [
+    "Modelo",
+    "Model",
+    "Modèle",
+    "Modello",
+    "Modell",
+    "Модель",
+    "模型"
+  ],
+  "Models": [
+    "Modelos",
+    "Models",
+    "Modèles",
+    "Modelli",
+    "Modelle",
+    "Модели",
+    "模型"
+  ],
+  "Download": [
+    "Descargar",
+    "Descarrega",
+    "Télécharger",
+    "Scarica",
+    "Herunterladen",
+    "Скачать",
+    "下载"
+  ],
+  "Downloads": [
+    "Descargas",
+    "Descàrregues",
+    "Téléchargements",
+    "Download",
+    "Downloads",
+    "Загрузки",
+    "下载"
+  ],
+  "Install": [
+    "Instalar",
+    "Instal·la",
+    "Installer",
+    "Installa",
+    "Installieren",
+    "Установить",
+    "安装"
+  ],
+  "Update": [
+    "Actualizar",
+    "Actualitza",
+    "Mettre à jour",
+    "Aggiorna",
+    "Aktualisieren",
+    "Обновить",
+    "更新"
+  ],
+  "Enabled": [
+    "Activado",
+    "Activat",
+    "Activé",
+    "Attivato",
+    "Aktiviert",
+    "Включено",
+    "已启用"
+  ],
+  "Disabled": [
+    "Desactivado",
+    "Desactivat",
+    "Désactivé",
+    "Disattivato",
+    "Deaktiviert",
+    "Отключено",
+    "已禁用"
+  ],
+  "ON": [
+    "ACTIVADO",
+    "ACTIVAT",
+    "ACTIVÉ",
+    "ATTIVO",
+    "EIN",
+    "ВКЛ.",
+    "开"
+  ],
+  "OFF": [
+    "DESACTIVADO",
+    "DESACTIVAT",
+    "DÉSACTIVÉ",
+    "DISATTIVO",
+    "AUS",
+    "ВЫКЛ.",
+    "关"
+  ],
+  "All": [
+    "Todos",
+    "Tots",
+    "Tous",
+    "Tutti",
+    "Alle",
+    "Все",
+    "全部"
+  ],
+  "None": [
+    "Ninguno",
+    "Cap",
+    "Aucun",
+    "Nessuno",
+    "Keine",
+    "Нет",
+    "无"
+  ],
+  "Default": [
+    "Predeterminado",
+    "Predeterminat",
+    "Par défaut",
+    "Predefinito",
+    "Standard",
+    "По умолчанию",
+    "默认"
+  ],
+  "Import": [
+    "Importar",
+    "Importa",
+    "Importer",
+    "Importa",
+    "Importieren",
+    "Импортировать",
+    "导入"
+  ],
+  "Export": [
+    "Exportar",
+    "Exporta",
+    "Exporter",
+    "Esporta",
+    "Exportieren",
+    "Экспортировать",
+    "导出"
+  ],
+  "Languages and community translations": [
+    "Idiomas y traducciones de la comunidad",
+    "Idiomes i traduccions de la comunitat",
+    "Langues et traductions communautaires",
+    "Lingue e traduzioni della comunità",
+    "Sprachen und Übersetzungen der Community",
+    "Языки и переводы сообщества",
+    "语言与社区翻译"
+  ],
+  "Choose your language once. The translator works quietly in the background.": [
+    "Elige tu idioma una vez. La traducción se aplica sin interrumpir tu trabajo.",
+    "Tria l'idioma una vegada. La traducció s'aplica sense interrompre la feina.",
+    "Choisissez votre langue une fois. La traduction s'applique sans interrompre votre travail.",
+    "Scegli la lingua una volta. La traduzione si applica senza interrompere il lavoro.",
+    "Wähle deine Sprache einmal aus. Die Übersetzung wird angewendet, ohne deine Arbeit zu unterbrechen.",
+    "Выберите язык один раз. Перевод применяется, не прерывая вашу работу.",
+    "只需选择一次语言，界面翻译即可自动生效，不打扰您的工作。"
+  ],
+  "Interface language": [
+    "Idioma de la interfaz",
+    "Idioma de la interfície",
+    "Langue de l'interface",
+    "Lingua dell'interfaccia",
+    "Sprache der Oberfläche",
+    "Язык интерфейса",
+    "界面语言"
+  ],
+  "Enable interface translation": [
+    "Activar la traducción de la interfaz",
+    "Activa la traducció de la interfície",
+    "Activer la traduction de l'interface",
+    "Attiva la traduzione dell'interfaccia",
+    "Übersetzung der Oberfläche aktivieren",
+    "Включить перевод интерфейса",
+    "启用界面翻译"
+  ],
+  "Preferred language": [
+    "Idioma preferido",
+    "Idioma preferit",
+    "Langue préférée",
+    "Lingua preferita",
+    "Bevorzugte Sprache",
+    "Предпочитаемый язык",
+    "首选语言"
+  ],
+  "Correct a translation": [
+    "Corregir una traducción",
+    "Corregeix una traducció",
+    "Corriger une traduction",
+    "Correggi una traduzione",
+    "Übersetzung korrigieren",
+    "Исправить перевод",
+    "修正翻译"
+  ],
+  "Translation language": [
+    "Idioma que quieres corregir",
+    "Idioma que vols corregir",
+    "Langue à corriger",
+    "Lingua da correggere",
+    "Zu bearbeitende Sprache",
+    "Язык для редактирования",
+    "要编辑的语言"
+  ],
+  "Search source or translation": [
+    "Buscar en el original o la traducción",
+    "Cerca a l'original o a la traducció",
+    "Rechercher dans le texte source ou la traduction",
+    "Cerca nell'originale o nella traduzione",
+    "Original oder Übersetzung durchsuchen",
+    "Поиск по оригиналу или переводу",
+    "搜索原文或译文"
+  ],
+  "All phrases": [
+    "Todas las frases",
+    "Totes les frases",
+    "Toutes les phrases",
+    "Tutte le frasi",
+    "Alle Texte",
+    "Все фразы",
+    "全部文本"
+  ],
+  "Missing translations": [
+    "Traducciones pendientes",
+    "Traduccions pendents",
+    "Traductions manquantes",
+    "Traduzioni mancanti",
+    "Fehlende Übersetzungen",
+    "Отсутствующие переводы",
+    "未翻译文本"
+  ],
+  "My corrections": [
+    "Mis correcciones",
+    "Les meves correccions",
+    "Mes corrections",
+    "Le mie correzioni",
+    "Meine Korrekturen",
+    "Мои исправления",
+    "我的修正"
+  ],
+  "Original English text": [
+    "Texto original en inglés",
+    "Text original en anglès",
+    "Texte original en anglais",
+    "Testo originale in inglese",
+    "Englischer Originaltext",
+    "Оригинальный текст на английском",
+    "英文原文"
+  ],
+  "Translation": [
+    "Traducción",
+    "Traducció",
+    "Traduction",
+    "Traduzione",
+    "Übersetzung",
+    "Перевод",
+    "译文"
+  ],
+  "Save correction": [
+    "Guardar corrección",
+    "Desa la correcció",
+    "Enregistrer la correction",
+    "Salva correzione",
+    "Korrektur speichern",
+    "Сохранить исправление",
+    "保存修正"
+  ],
+  "Restore bundled translation": [
+    "Restaurar la traducción del plugin",
+    "Restaura la traducció del connector",
+    "Restaurer la traduction du plugin",
+    "Ripristina la traduzione del plugin",
+    "Mitgelieferte Übersetzung wiederherstellen",
+    "Восстановить перевод из плагина",
+    "恢复插件自带的翻译"
+  ],
+  "Add a missing phrase": [
+    "Añadir una frase que falta",
+    "Afegeix una frase que falta",
+    "Ajouter une phrase manquante",
+    "Aggiungi una frase mancante",
+    "Fehlenden Text hinzufügen",
+    "Добавить отсутствующую фразу",
+    "添加缺失文本"
+  ],
+  "Add phrase": [
+    "Añadir frase",
+    "Afegeix la frase",
+    "Ajouter la phrase",
+    "Aggiungi frase",
+    "Text hinzufügen",
+    "Добавить фразу",
+    "添加文本"
+  ],
+  "Add languages and share contributions": [
+    "Añadir idiomas y compartir aportaciones",
+    "Afegeix idiomes i comparteix aportacions",
+    "Ajouter des langues et partager les contributions",
+    "Aggiungi lingue e condividi i contributi",
+    "Sprachen hinzufügen und Beiträge teilen",
+    "Добавление языков и обмен переводами",
+    "添加语言与分享翻译"
+  ],
+  "Language code": [
+    "Código de idioma",
+    "Codi d'idioma",
+    "Code de langue",
+    "Codice lingua",
+    "Sprachcode",
+    "Код языка",
+    "语言代码"
+  ],
+  "Native language name": [
+    "Nombre del idioma en su propia lengua",
+    "Nom de l'idioma en la seva llengua",
+    "Nom de la langue dans cette langue",
+    "Nome della lingua nella lingua stessa",
+    "Name der Sprache in der jeweiligen Sprache",
+    "Название языка на этом языке",
+    "语言的本地名称"
+  ],
+  "Create language": [
+    "Crear idioma",
+    "Crea l'idioma",
+    "Créer la langue",
+    "Crea lingua",
+    "Sprache anlegen",
+    "Добавить язык",
+    "创建语言"
+  ],
+  "Export my corrections": [
+    "Exportar mis correcciones",
+    "Exporta les meves correccions",
+    "Exporter mes corrections",
+    "Esporta le mie correzioni",
+    "Meine Korrekturen exportieren",
+    "Экспортировать мои исправления",
+    "导出我的修正"
+  ],
+  "Export complete language pack": [
+    "Exportar el paquete completo del idioma",
+    "Exporta el paquet complet de l'idioma",
+    "Exporter le pack de langue complet",
+    "Esporta il pacchetto lingua completo",
+    "Vollständiges Sprachpaket exportieren",
+    "Экспортировать полный языковой пакет",
+    "导出完整语言包"
+  ],
+  "Export JSON for Weblate": [
+    "Exportar JSON para Weblate",
+    "Exporta JSON per al Weblate",
+    "Exporter le JSON pour Weblate",
+    "Esporta JSON per Weblate",
+    "JSON für Weblate exportieren",
+    "Экспортировать JSON для Weblate",
+    "导出用于 Weblate 的 JSON"
+  ],
+  "Import language pack": [
+    "Importar un paquete de idioma",
+    "Importa un paquet d'idioma",
+    "Importer un pack de langue",
+    "Importa un pacchetto lingua",
+    "Sprachpaket importieren",
+    "Импортировать языковой пакет",
+    "导入语言包"
+  ],
+  "Apply import": [
+    "Aplicar importación",
+    "Aplica la importació",
+    "Appliquer l'importation",
+    "Applica importazione",
+    "Import anwenden",
+    "Применить импорт",
+    "应用导入"
+  ],
+  "Undo last import": [
+    "Deshacer la última importación",
+    "Desfés l'última importació",
+    "Annuler la dernière importation",
+    "Annulla l'ultima importazione",
+    "Letzten Import rückgängig machen",
+    "Отменить последний импорт",
+    "撤销上次导入"
+  ],
+  "Correction saved in this browser.": [
+    "Corrección guardada en este navegador.",
+    "Correcció desada en aquest navegador.",
+    "Correction enregistrée dans ce navigateur.",
+    "Correzione salvata in questo browser.",
+    "Korrektur in diesem Browser gespeichert.",
+    "Исправление сохранено в этом браузере.",
+    "修正已保存在此浏览器中。"
+  ],
+  "Bundled translation restored.": [
+    "Se ha restaurado la traducción del plugin.",
+    "S'ha restaurat la traducció del connector.",
+    "La traduction du plugin a été restaurée.",
+    "La traduzione del plugin è stata ripristinata.",
+    "Die mitgelieferte Übersetzung wurde wiederhergestellt.",
+    "Перевод из плагина восстановлен.",
+    "已恢复插件自带的翻译。"
+  ],
+  "Phrase added to your corrections.": [
+    "Frase añadida a tus correcciones.",
+    "Frase afegida a les teves correccions.",
+    "Phrase ajoutée à vos corrections.",
+    "Frase aggiunta alle tue correzioni.",
+    "Text zu deinen Korrekturen hinzugefügt.",
+    "Фраза добавлена в ваши исправления.",
+    "文本已添加到您的修正中。"
+  ],
+  "Last import undone.": [
+    "Se ha deshecho la última importación.",
+    "S'ha desfet l'última importació.",
+    "La dernière importation a été annulée.",
+    "L'ultima importazione è stata annullata.",
+    "Der letzte Import wurde rückgängig gemacht.",
+    "Последний импорт отменён.",
+    "已撤销上次导入。"
+  ],
+  "Draft for local review. Nothing will be published without approval.": [
+    "Versión local para revisión. No se publicará nada sin tu aprobación.",
+    "Versió local per revisar. No es publicarà res sense la teva aprovació.",
+    "Version locale à vérifier. Rien ne sera publié sans votre accord.",
+    "Versione locale da revisionare. Nulla sarà pubblicato senza la tua approvazione.",
+    "Lokale Version zur Prüfung. Ohne deine Zustimmung wird nichts veröffentlicht.",
+    "Локальная версия для проверки. Ничего не будет опубликовано без вашего согласия.",
+    "这是供本地审阅的版本。未经您的批准，不会发布任何内容。"
+  ],
+  "Multilingual interface for WanGP. Tested with WanGP 19.292. Eight languages, versioned catalogs, a translation editor and Weblate-ready files.": [
+    "Interfaz multilingüe para WanGP. Probada con WanGP 19.292. Ocho idiomas, catálogos con versiones, un editor de traducciones y archivos preparados para Weblate.",
+    "Interfície multilingüe per a WanGP. Provada amb WanGP 19.292. Vuit idiomes, catàlegs amb versions, un editor de traduccions i fitxers preparats per a Weblate.",
+    "Interface multilingue pour WanGP. Testée avec WanGP 19.292. Huit langues, des catalogues versionnés, un éditeur de traductions et des fichiers prêts pour Weblate.",
+    "Interfaccia multilingue per WanGP. Provata con WanGP 19.292. Otto lingue, cataloghi con versioni, un editor di traduzioni e file predisposti per Weblate.",
+    "Mehrsprachige Oberfläche für WanGP. Mit WanGP 19.292 getestet. Acht Sprachen, versionierte Kataloge, ein Übersetzungseditor und für Weblate vorbereitete Dateien.",
+    "Многоязычный интерфейс WanGP. Проверен с WanGP 19.292. Восемь языков, каталоги с версиями, редактор переводов и файлы, подготовленные для Weblate.",
+    "WanGP 多语言界面。已在 WanGP 19.292 上测试。提供八种语言、带版本的语言目录、翻译编辑器及为 Weblate 准备的文件。"
+  ]
 }
