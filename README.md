@@ -1,119 +1,131 @@
 # WanGP Languages
 
-Plugin de idiomas para WanGP. Versión **0.2.0**, primera versión pública.
+Multilingual interface for WanGP with eight languages, versioned catalogs,
+a translation editor and files prepared for Weblate.
 
-[English guide](README.en.md)
+**Plugin 0.2.0 · tested with WanGP 19.292.**
 
-Incluye español, catalán, inglés original, francés, italiano, alemán, ruso y
-chino simplificado. Proyecto independiente: la inclusión en el catálogo oficial de
-WanGP todavía no se ha solicitado ni aprobado.
+[Guía en español](README.es.md) · [Releases](https://github.com/SkriptorL/wangp-language/releases) · [Report a translation issue](https://github.com/SkriptorL/wangp-language/issues/new/choose)
 
-## Compatibilidad con WanGP
+Includes Spanish, Catalan, original English, French, Italian, German, Russian
+and Simplified Chinese. This is an independent plugin. Inclusion in WanGP's
+public plugin catalog has not been requested or approved.
 
-**Plugin 0.2.0 · probado con WanGP 19.292.** Son dos números de versión distintos.
+## WanGP compatibility
 
-| Versión del plugin | WanGP probado | Mínimo declarado | Otras versiones de WanGP |
+The plugin and WanGP have separate version numbers.
+
+| Plugin version | Tested WanGP | Declared minimum | Other WanGP versions |
 | --- | --- | --- | --- |
-| 0.2.0 | 19.292 | 19.292 | Anteriores y posteriores: no verificadas |
+| 0.2.0 | 19.292 | 19.292 | Older and newer versions: unverified |
 
-El campo `wan2gp_version` de `plugin_info.json` declara el mínimo 19.292 para el
-gestor de plugins. Este requisito **no certifica compatibilidad con todas las
-versiones posteriores**. La única versión probada de esta entrega es 19.292.
+The `wan2gp_version` field in `plugin_info.json` declares a minimum of 19.292
+for WanGP's plugin manager. It does **not** certify compatibility with every
+later WanGP version. **19.292 is the only version tested for this release.**
 
-Al actualizar WanGP, comprueba esta tabla y las notas de la versión del plugin.
-Las nuevas versiones se incorporarán cuando se prueben; pueden requerir ajustes
-en los textos o en la interfaz. Cada entrega conservará su versión probada en
-las notas de lanzamiento y en [compatibility.json](compatibility.json).
+Check this table and the release notes when updating WanGP. Support will be
+recorded as newer versions are tested; catalog or interface adjustments may be
+needed. Each release records its tested version in its release notes and
+[compatibility.json](compatibility.json).
 
-## Uso
+## Installation
 
-Activa el plugin en el gestor de aplicaciones y reinicia WanGP. Abre la sección
-**Languages / Idiomas**, elige el idioma y vuelve a tu trabajo. La selección se
-recuerda en ese navegador y dirección de WanGP. No aparece ningún selector flotante.
-Desmarca **Activar la traducción de la interfaz** para recuperar el inglés
-inmediatamente; el idioma elegido se conserva para volver a activarlo.
+Install directly from WanGP's application and plugin manager:
 
-Los catálogos se distribuyen con el plugin. Usarlo no necesita un modelo, GPU,
-servicio de traducción ni conexión a Internet. No modifica el núcleo, los prompts,
-las rutas, los archivos ni los valores que recibe el generador. Los desplegables
-conservan su valor original y muestran una etiqueta traducida cuando no se editan.
-La búsqueda dentro de los desplegables propios de WanGP utiliza sus nombres
-originales en inglés; al salir del campo vuelve a mostrarse la etiqueta traducida.
+1. Open **Available Apps & Plugins / Apps & PlugIn Manager** in WanGP.
+2. Expand **Install from URL** near the bottom of the manager.
+3. Paste `https://github.com/SkriptorL/wangp-language` into **GitHub URL**.
+4. Click **Download and install from URL** and wait for installation to finish.
+5. Find **WanGP Languages**, enable it and restart WanGP.
+6. Open **More apps → Languages**, choose your language and return to the generator.
 
-## Corregir y colaborar
+![Install from URL in WanGP's application and plugin manager](docs/images/install-from-url-en.jpg)
 
-En **Corregir una traducción**, elige el idioma que quieres editar, busca una frase
-y guarda la corrección. Puedes restaurar la versión incluida con el plugin.
-**Añadir una frase que falta** permite incorporar el texto exacto de un control
-que todavía no figure en el catálogo.
+You do not need to download a ZIP or copy files manually. Later versions can
+be installed with **Update** on the plugin's card. Browser preferences and
+corrections are retained; export corrections to keep a separate backup.
 
-Las correcciones se guardan en el almacenamiento local del navegador. No son una
-cuenta compartida ni se sincronizan automáticamente. Exporta las correcciones para
-conservar una copia y enviarla a otro colaborador. Borrar los datos del navegador,
-cambiar de navegador o usar otra dirección/puerto de WanGP no conserva esa copia local.
-Las actualizaciones del plugin mantienen las correcciones del navegador.
+Installing from a GitHub URL and appearing in WanGP's public plugin catalog
+are separate processes. This repository can be installed directly. Catalog
+inclusion depends on the WanGP maintainers.
 
-En **Añadir idiomas y compartir aportaciones** puedes:
+For manual installation, put the repository contents in
+`plugins/wangp-language`, enable the plugin and restart WanGP. `plugin.py` and
+`plugin_info.json` must be at the root of that folder. Back up any local changes
+before replacing an existing installation.
 
-- Crear otro idioma con su código y nombre propio.
-- Exportar sólo tus correcciones o un paquete completo del idioma seleccionado
-  en el editor. Las frases sin traducción usan el inglés original.
-- Previsualizar e importar un paquete JSON. Por defecto se conservan tus
-  correcciones cuando hay conflictos; reemplazarlas es una elección explícita.
-- Deshacer el último importado sin eliminar las correcciones que hayas hecho
-  después de importarlo.
-- Exportar el JSON monolingüe que utiliza el futuro flujo con Weblate.
+## Usage
 
-Los paquetes se interpretan como texto, nunca como HTML o código. La importación
-valida códigos, entradas duplicadas y marcadores como `{0}` antes de aplicarse.
-El editor no envía archivos ni propuestas a GitHub, Weblate u otras personas.
+Open **More apps → Languages**, select your preferred language and return to
+your work. The choice is remembered for that browser and WanGP address. There
+is no floating language selector, and the Languages section does not open
+automatically on startup.
 
-Los catálogos ampliados se han preparado con asistencia de un modelo local y
-ajustes de terminología. Necesitan revisión de hablantes de cada idioma, sobre
-todo las ayudas largas. No deben presentarse como traducciones certificadas.
+Uncheck **Enable interface translation** to restore the original English
+interface immediately. Your preferred language is retained for re-enabling.
 
-## Instalación desde repositorio
+The catalogs ship with the plugin. Using it requires no model, GPU, online
+translation service or Internet connection. It does not modify WanGP's core,
+your prompts, paths, files or the values passed to the generator.
 
-Se instala desde el propio gestor de WanGP, en la sección que muestra esta captura:
+Dropdowns preserve their original values and show translated captions when
+they are not being edited. Searching inside WanGP's existing dropdowns uses
+their original English labels; the translated caption returns when the field
+loses focus.
 
-![Instalar desde URL en el gestor de aplicaciones y plugins de WanGP](docs/images/install-from-url.png)
+## Correct translations and contribute
 
-1. Abre **Available Apps & Plugins / Gestor de aplicaciones y plugins** en WanGP.
-2. Baja hasta **Instalar desde URL** y despliega la sección.
-3. Pega `https://github.com/SkriptorL/wangp-language` en **URL de GitHub**.
-4. Pulsa **Descargar e instalar desde URL** y espera a que termine.
-5. Busca **WanGP Languages**, pulsa **Activar** y reinicia WanGP.
-6. Abre **Más aplicaciones → Idiomas**, elige tu idioma y vuelve al generador.
+Under **Correct a translation**, select a language, search for a phrase and
+save your correction. You can restore the translation bundled with the plugin.
+**Add a missing phrase** lets you add the exact text of an interface control
+that is not yet in the catalog.
 
-No hace falta descargar un ZIP ni copiar archivos a mano.
-Las versiones posteriores se podrán obtener con **Actualizar** en la ficha del
-plugin instalado desde GitHub. La elección de idioma y las correcciones guardadas
-en el navegador se conservan; exporta tus correcciones para tener también una copia.
+Corrections are stored in the browser's local storage. They are not a shared
+account and do not synchronize automatically. Export your corrections to back
+them up or share them with another contributor. Clearing browser data, changing
+browsers or using a different WanGP address or port does not carry that local
+copy over. Plugin updates retain the corrections stored in the browser.
 
-La instalación por URL y la inclusión en el catálogo público son procesos
-diferentes. Puedes instalar este repositorio directamente; aparecer en la lista
-de plugins descargables de WanGP depende de sus responsables.
+Under **Add languages and share contributions**, you can:
 
-El paquete contiene `plugin.py` y `plugin_info.json` en la raíz, como requiere
-el gestor de WanGP. Para una instalación manual, coloca su contenido en
-`plugins/wangp-language`, activa el plugin y reinicia. Guarda tus cambios locales
-antes de reemplazar una instalación existente.
+- Create a language using its code and native name.
+- Export only your corrections or a complete pack for the language selected
+  in the editor. Untranslated phrases fall back to the original English.
+- Preview and import a JSON pack. Existing local corrections win conflicts
+  unless you explicitly choose to replace them.
+- Undo the last import without deleting corrections made after that import.
+- Export the monolingual JSON used by the planned Weblate workflow.
 
-## Alcance y mantenimiento
+Imported packs are treated as text, never as HTML or executable code. Import
+validation checks language codes, normalized duplicate phrases and placeholders
+such as `{0}` before applying changes. The editor does not send files or
+contributions automatically to GitHub, Weblate or other people.
 
-Se traducen textos de la interfaz, ayudas, guías integradas y aplicaciones
-incrustadas del mismo origen cuando coinciden con el catálogo. Las frases nuevas
-o no reconocidas mantienen el inglés. Se excluyen conversaciones, prompts,
-nombres de archivos de la galería, metadatos y contenido editable del usuario.
-Las aplicaciones externas, los iframes de otro origen, la consola y una aplicación
-independiente que no cargue el plugin quedan fuera de este mecanismo.
+To suggest a public correction, use the repository's **Translation correction**
+issue template. Include the language, the WanGP and plugin versions, the exact
+original phrase, where it appears, and your suggested translation. Leave out
+personal prompts, paths and private content.
 
-La adaptación utiliza la API `add_custom_js` de WanGP y conserva los originales
-para restaurarlos. El observador deja de trabajar al desactivar la traducción.
-Una futura actualización de WanGP puede requerir actualizar catálogos o selectores.
-El número de entradas del catálogo no equivale a un porcentaje de toda la aplicación.
+The expanded catalogs were prepared with a local model and terminology
+corrections. **Native-speaker review is welcome**, especially for longer help
+texts. These are not certified translations.
 
-Desde la raíz de WanGP, usando el Python de su entorno:
+## Scope and limitations
+
+The plugin translates matching interface text, help, integrated guides and
+same-origin embedded applications. New or unrecognized phrases stay in English.
+Conversations, prompts, gallery filenames, metadata and editable user content
+are excluded. External applications, cross-origin frames, console output and
+standalone applications that do not load the plugin are outside its scope.
+
+The integration uses WanGP's `add_custom_js` API and preserves original text
+so it can be restored. Its observer stops working when translation is disabled.
+Future WanGP updates may require changes to catalogs or interface selectors.
+The number of catalog entries is not a percentage of every string in WanGP.
+
+## Maintenance
+
+From the WanGP root, using the Python interpreter from its environment:
 
 ```text
 python plugins/wangp-language/tools/catalog_tool.py validate
@@ -122,33 +134,36 @@ python -m unittest discover -s plugins/wangp-language/tests
 python plugins/wangp-language/tools/build_browser_test.py language-tests/index.html
 ```
 
-El extractor sólo lee fuentes de la aplicación y guías integradas. Requiere
-`markdown-it-py`, ya utilizado por el entorno de WanGP. El resultado es un
-inventario de candidatos que debe revisarse antes de incorporarlo. No lee fotos,
-configuración personal, conversaciones ni salidas generadas. La página de pruebas
-se sirve por HTTP local y se ejecuta con **Run tests**; no genera contenido.
+The extractor reads application source and integrated guides. It requires
+`markdown-it-py`, already used by WanGP's environment. Its output is a candidate
+inventory to review before adding entries. It does not read personal photos,
+configuration, conversations or generated output. Serve the browser test page
+over local HTTP and click **Run tests**; the checks do not generate media.
 
-Los códigos se registran en `languages.json`; los archivos están en
-`locales/<código>.json`. `en.json` contiene cada frase fuente como clave y valor.
-Conserva las claves y los marcadores, nombres de modelos, rutas y comandos.
-`tools/terminology.json` recoge decisiones de terminología de esta versión.
+Language codes and names live in `languages.json`; catalogs are
+`locales/<code>.json`. `en.json` maps each English source phrase to itself.
+Preserve source keys, placeholders, model names, paths and command syntax.
+`tools/terminology.json` records terminology choices for this version.
 
-## Weblate, conexión posterior
+Public documentation, release notes and contribution templates use English as
+the primary language. Keep the separately linked Spanish guide up to date.
 
-Los catálogos usan el formato [JSON monolingüe de Weblate](https://docs.weblate.org/en/latest/formats/json.html).
-La conexión todavía no existe. Cuando se configure el proyecto de traducción:
+## Weblate: future connection
 
-1. Crear un componente con el repositorio Git del plugin.
-2. Elegir formato **JSON file**, idioma fuente **English**.
-3. Máscara: `locales/*.json`; base monolingüe: `locales/en.json`.
-4. Dejar vacía la plantilla de nuevos idiomas para usar el archivo base.
-5. Registrar los idiomas nuevos en `languages.json`, fuera de la máscara traducible.
-6. Revisar las aportaciones, ejecutar las pruebas y distribuirlas en una nueva versión.
+Catalogs use [Weblate's monolingual JSON format](https://docs.weblate.org/en/latest/formats/json.html).
+**No Weblate project is connected yet.** When setting one up:
 
-WanGP seguirá funcionando con sus catálogos locales si Weblate no está disponible.
+1. Create a component using this plugin's Git repository.
+2. Choose **JSON file** format and **English** as the source language.
+3. Use `locales/*.json` as the file mask and `locales/en.json` as the monolingual base.
+4. Leave the new-language template empty to use the base file.
+5. Register new languages in `languages.json`, outside the translation file mask.
+6. Review contributions, run the checks and distribute them in a new plugin release.
 
-## Licencia
+WanGP will continue to use its bundled catalogs if Weblate is unavailable.
 
-El código original de este plugin se ofrece bajo MIT, según `LICENSE`.
-Los textos procedentes de WanGP y sus traducciones conservan los derechos y avisos
-de su origen; véanse `THIRD_PARTY_NOTICES.txt` y `LICENSE.WanGP.txt`.
+## License
+
+Original plugin code is licensed under MIT; see `LICENSE`.
+Texts originating from WanGP and their translations retain the rights and
+notices of their source. See `THIRD_PARTY_NOTICES.txt` and `LICENSE.WanGP.txt`.
