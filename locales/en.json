@@ -2389,6 +2389,7 @@
   "Multi-step requests suited to Prime:": "Multi-step requests suited to Prime:",
   "MultiTalk": "MultiTalk",
   "Multilingual interface for WanGP with eight languages, versioned catalogs, a translation editor and Weblate-ready files.": "Multilingual interface for WanGP with eight languages, versioned catalogs, a translation editor and Weblate-ready files.",
+  "Multilingual interface for WanGP. Tested with WanGP 19.292. Eight languages, versioned catalogs, a translation editor and Weblate-ready files.": "Multilingual interface for WanGP. Tested with WanGP 19.292. Eight languages, versioned catalogs, a translation editor and Weblate-ready files.",
   "Multilingual speech and optional reference voice cloning, with explicit pauses and pronunciation control. Native 24 kHz mono audio.": "Multilingual speech and optional reference voice cloning, with explicit pauses and pronunciation control. Native 24 kHz mono audio.",
   "Multilingual speech and up to three cloned dialogue voices, generated turn by turn. Native 48 kHz stereo audio.": "Multilingual speech and up to three cloned dialogue voices, generated turn by turn. Native 48 kHz stereo audio.",
   "Multilingual speech, voice design, cloning and dialogue, with control over speaking speed.": "Multilingual speech, voice design, cloning and dialogue, with control over speaking speed.",
