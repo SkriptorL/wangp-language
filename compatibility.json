@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "pluginVersion": "0.2.0",
+      "testedWanGP": [
+        "19.292"
+      ],
+      "declaredMinimumWanGP": "19.292",
+      "olderWanGP": "unverified",
+      "newerWanGP": "unverified",
+      "testedOn": "2026-11-14"
+    }
+  ]
+}

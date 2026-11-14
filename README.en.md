@@ -7,6 +7,25 @@ Version **0.2.0** is the first public release. This is an independent plugin;
 WanGP catalog inclusion has not been requested or approved. Languages: Spanish, Catalan, the original English, French, Italian,
 German, Russian and Simplified Chinese.
 
+## WanGP compatibility
+
+**Plugin 0.2.0 · tested with WanGP 19.292.** The plugin and WanGP use separate version numbers.
+
+| Plugin version | Tested WanGP | Declared minimum | Other WanGP versions |
+| --- | --- | --- | --- |
+| 0.2.0 | 19.292 | 19.292 | Older and newer versions: unverified |
+
+The `wan2gp_version` field in `plugin_info.json` declares a minimum of 19.292
+for WanGP's plugin manager. It does **not** certify every later WanGP version.
+19.292 is the only version tested for this release.
+
+Check this table and the release notes when updating WanGP. Support will be
+recorded as newer versions are tested; catalog or interface adjustments may be
+needed. Each release records its tested version in the release notes and
+[compatibility.json](compatibility.json).
+
+## Usage
+
 Activate the plugin, restart WanGP and open **More apps → Languages**. Choose
 your language once; there is no floating selector. Disable interface translation
 to restore English immediately. Preferences and corrections belong to this

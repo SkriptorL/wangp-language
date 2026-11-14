@@ -5345,5 +5345,6 @@
   "Choose a Lora Preset or a Settings file in this List": "interface",
   "Attention mode": "interface",
   ", Data Type": "interface",
-  ", Quantization": "interface"
+  ", Quantization": "interface",
+  "Multilingual interface for WanGP. Tested with WanGP 19.292. Eight languages, versioned catalogs, a translation editor and Weblate-ready files.": "interface"
 }

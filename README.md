@@ -3,9 +3,27 @@
 Plugin de idiomas para WanGP. Versión **0.2.0**, primera versión pública.
 
 [English guide](README.en.md)
+
 Incluye español, catalán, inglés original, francés, italiano, alemán, ruso y
 chino simplificado. Proyecto independiente: la inclusión en el catálogo oficial de
 WanGP todavía no se ha solicitado ni aprobado.
+
+## Compatibilidad con WanGP
+
+**Plugin 0.2.0 · probado con WanGP 19.292.** Son dos números de versión distintos.
+
+| Versión del plugin | WanGP probado | Mínimo declarado | Otras versiones de WanGP |
+| --- | --- | --- | --- |
+| 0.2.0 | 19.292 | 19.292 | Anteriores y posteriores: no verificadas |
+
+El campo `wan2gp_version` de `plugin_info.json` declara el mínimo 19.292 para el
+gestor de plugins. Este requisito **no certifica compatibilidad con todas las
+versiones posteriores**. La única versión probada de esta entrega es 19.292.
+
+Al actualizar WanGP, comprueba esta tabla y las notas de la versión del plugin.
+Las nuevas versiones se incorporarán cuando se prueben; pueden requerir ajustes
+en los textos o en la interfaz. Cada entrega conservará su versión probada en
+las notas de lanzamiento y en [compatibility.json](compatibility.json).
 
 ## Uso
 

@@ -4,8 +4,11 @@
 
 First public release of WanGP Languages (`wangp-language`).
 
+**Tested with WanGP 19.292 only.** Minimum declared to the plugin manager: 19.292.
+Older and newer WanGP versions are unverified; see `compatibility.json`.
+
 - Eight languages: Spanish, Catalan, original English, French, Italian, German,
-  Russian and Simplified Chinese; 5,347 source entries per catalog.
+  Russian and Simplified Chinese; 5,348 source entries per catalog.
 - A dedicated Languages section with remembered preferences and immediate
   disable/re-enable controls, without a floating selector.
 - Local translation corrections, additional languages, conflict previews,
